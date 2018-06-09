@@ -8,22 +8,22 @@ uncontrolled dynamics described by:
 		\frac{dS}{dt} &=
 			\mu N  
 			- \beta \frac{S I}{N} 
-			- \mu \frac{N}{K} S 
+			- \mu \frac{N}{K} S ,
 		\\
 		\frac{dI}{dt} &=
 			\beta \frac{S I}{N}
 			- \gamma I
-			- \mu \frac{N}{K} I
+			- \mu \frac{N}{K} I,
 		\\
 		\frac{dR}{dt} &= 
 			\gamma I 
-			- \mu \frac{N}{K} R 
+			- \mu \frac{N}{K} R ,
 		\\
 		S(0) &= S_0, \quad
 		I(0) = I_0, \quad
-		R(0) = R_0
+		R(0) = R_0,
 		\\
-		N &= S + I +R
+		N &= S + I +R,
 		\\
 		\frac{dN}{dt} &=
 			\mu N 
@@ -35,13 +35,13 @@ uncontrolled dynamics described by:
 
 Given initial population sizes $S_0, I_0, R_0$, the goal is to determine the best policy to
 mitigate the outbreak described by the SIR model \eqref{eqn:SIR} and optimize a regarding  cost. In this context, the policies are Lebesgue measurable bounded functions
-which optimize a given convex functional cost. For example, \citeauthor{Schaefer2009} pursue to minimize the infected population described by \eqref{eqn:SIR} while minimizing the cost of vaccination $(u_1(t))$ and treatment ($u_2(t))$. In symbols, the authors seek to minimize the objective functional
+which optimize a given convex functional cost. For example, \citeauthor{Schaefer2009} pursue to minimize the infected population described by \eqref{eqn:SIR} while minimizing the cost of vaccination $u_1$ and treatment $u_2$. In symbols, the authors seek to minimize the objective functional
 \begin{equation}
 	\int_{0}^T	
 		\left[
 			B_1 I(t) 
-			+ B_2 \left[\frac{R(t)}{K}\right]^m u_1(t)^2 + B_3 u_2(t)
-		\right],
+			+ B_2 \left[\frac{R(t)}{K}\right]^m [u_1(t)]^2 + B_3 [u_2(t)]^2
+		\right] dt,
 		\qquad  m\geq 1,
 \end{equation}
 subject to
@@ -50,19 +50,19 @@ subject to
 		\frac{dS}{dt} &=
 			\mu N  
 			- \beta \frac{S I}{N} 
-			- \mu \frac{N}{K} S - u_1(t) S
+			- \mu \frac{N}{K} S - u_1(t) S,
 		\\
 		\frac{dI}{dt} &=
 			\beta \frac{S I}{N}
 			- (\gamma  + \mu) I 
 			- \mu \frac{N}{K} I
-			- u_2(t) I
+			- u_2(t) I,
 		\\
 		\frac{dR}{dt} &= 
 			\gamma I 
 			- \mu \frac{N}{K} R 
 			+ u_1(t) S 
-			+ u_2(t) I
+			+ u_2(t) I,
 		\\
 		S(0) &= S_0, \quad
 		I(0) = I_0, \quad
