@@ -1,0 +1,53 @@
+\paragraph{SARS and genetic algorithms. [FRANK]}
+Xiefei Yan and Yun Zou report in \cite{Yan2008} a epidemic model for
+Severe acute respiratory syndrome (SARS) They use quarantine and isolation as
+mitigation controls. The authors propose sub-optimal control policies and
+perform numeric simulations with genetic algorithms. Frist, we present the
+uncontrolled version used in the mentioned reference and formulated by Gummel 
+et. al. in \cite{Gumel2004}:
+%
+%
+\begin{equation}
+	\begin{aligned}
+		\dfrac{dS}{dt} &=
+			\Lambda 
+			-\dfrac{
+				\beta S
+				\left(
+					I + \mathcal{E}_E E
+					+ \mathcal{Q}_Q Q
+					+ \mathcal{J}_J E
+				\right)
+			}{N}
+		\\
+		\dfrac{dE}{dt} &=
+			p +
+			\dfrac{
+				\beta S
+				\left(
+					I + \mathcal{E}_E E
+						+ \mathcal{Q}_Q Q
+						+ \mathcal{J}_J E
+				\right)
+			}{N}
+			-(\gamma + \kappa_1 + \mu) E
+		\\
+		\dfrac{dQ}{dt} &=
+			\gamma_1 E 
+			- (\kappa_2 + \mu) Q
+		\\
+		\dfrac{dI}{dt} &=
+			\kappa_1 E 
+			-(\gamma_2 + d_1  + \sigma_1 + \mu I)
+		\\
+		\dfrac{dJ}{dt} &=
+			\gamma_2 I 
+			+ \kappa_2 Q
+			- (\sigma_2 + d_2 + \mu) J
+		\\
+		\dfrac{dR}{dt} &=
+			\sigma_1 I
+			+\sigma_2 J
+			- \mu R.
+	\end{aligned}
+\end{equation}

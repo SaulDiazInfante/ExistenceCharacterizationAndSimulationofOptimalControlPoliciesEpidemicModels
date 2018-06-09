@@ -1,0 +1,119 @@
+\subsection{Deterministic OCPs in continuous time}
+
+Let $X\s\R^n$ and $U\s \R^m$ be nonempty sets. The sets $X$ and $U$ are 
+respectively called the {\it state space} and the {\it control space}. Consider 
+the following {\it control system}
+\begin{equation}\label{CoDiffEq}
+\dot{x}(t)=f(t,x(t),u(t)),\qquad t\in[0,T], \quad x(0)=x_0.
+\end{equation}
+where $f:[0,T]\times X\times U\to \R^n$ and $u:[0,T]\to U$. 
+%In order to guarantee the existence of a solution $x$ to \eqref{CoDiffEq}, 
+%we need the following.
+
+\begin{assumption}\label{Assum1}  The function $f:[0,T]\times X\times U\to \R^n$
+is measurable and there exists a constant $L>0$ such that
+\begin{eqnarray}
+  |f(t,x,u)-f(t,x_1,u)| & \leq & L|x-x_1|\label{LipfInx}
+  %\\|f(t,0,u)| & \leq & L\label{fBound}
+\end{eqnarray}
+for every $x,x_1\in X$, $t\in[0,T]$, and $u\in U$.
+\end{assumption}
+
+%A proof of the following result can be found, for instance, in Yong \cite[Sect. 2.1]{Yong2015}. 
+
+\begin{theorem}\label{ExAdmisPair} 
+	Under Assumption \ref{Assum1}, the system 
+	\eqref{CoDiffEq} has a unique 	solution $x_u$ for each measurable function 
+	$u:[0,T]\to U$. %The solution $x_u$ satisfies	\begin{equation}\label{ineqSol} 
+	%	|x_u(t)|\leq e^{Lt}(1+|x_0|) -1,\qquad t\in [0,T].	\end{equation}
+\end{theorem}
+\begin{proof} 
+Let $w(s):=e^{Lt}$, $t\in [0,T]$, and consider the vector space 
+    \[X=\{x:[0,T]\to \R^n\mid f \mbox{ is continuous}\}\] 
+with the norm
+    \[ \|x\|_w:=\sup_{t\in[0,T]} \frac{|x(t)|}{w(t)}. \]
+It can be shown, with a slight modification in \cite[Section 2.1]{Teschl}, that the pair $(X,\|\cdot\|_w)$ is a Banach space. We claim that the operator $K:X\to X$ given by 
+    \[ K[x](t):=x_0 + \int_0^t f(s,x(s),u(s))ds\]
+is a contraction with contraction constant $1-e^{-LT}$. Indeed, 
+    \begin{eqnarray*}
+    \| K[x] - K[y] \|_w & = & \sup_{t\in[0,T]} \frac{|\int_0^t [f(s,x(s),u(s)) -f(s,y(s),u(s))]ds|}{w(t)}\\
+        & \leq &   \sup_{t\in[0,T]} \frac{L\int_0^t w(s)[w(s)]^{-1}|x(s) -y(s)|ds}{w(t)}\\
+        &\leq &  L\|x-y\|_w \sup_{t\in[0,T]} \frac{\int_0^t w(s)ds}{w(t)}\\
+        & = &  L\|x-y\|_w \sup_{t\in[0,T]}\frac{[e^{Lt}-1]/L}{e^{Lt}}\\
+        & = &  (1-e^{-LT})\|x-y\|_w. 
+    \end{eqnarray*}
+Therefore by Banach's fixed point theorem \cite[Theorem 2.1]{Teschl}, there exists a unique $x\in X$ satisfying \eqref{CoDiffEq}.
+\end{proof}
+
+
+	Given a measurable function $u$, let $x_u(\cdot)$ denote the solution to 
+\eqref{CoDiffEq}. The terminal point $x_u(T)$ can be constrained to belong to a 
+set $M\s X$, in such a case we assume the following. 
+
+\begin{assumption} Let $M$ be a nonempty subset of $X$. 
+	The set of {\it admissible controls} 
+	\begin{equation}\label{FeasCont}  
+		 U_M:=\{u:[0,T]\to U\mid u\  
+		 \mbox{\rm is measurable and } x_u(T)\in M\} 
+	\end{equation}
+	is nonempty. A pair $(x_u,u)$, where $u\in U_M$, is called an 
+	{\it admissible pair}. To ease notation, we simply write $(x,u)$.
+\end{assumption}
+
+
+Consider the {\it performance index} of an admissible control $u$, given the initial state $x_0$, 
+        \begin{equation}\label{PiBolza} V(u,x_0) := \int_0^Tg(t,x(t),u(t))\,dt + h(x(T)),\end{equation}
+where $g:[0,T]\times X\times U\to \R$ and $h:X\to\R$ are measurable.
+
+The {\it optimal control problem} (OCP) consists of finding an admissible control $u^\ast$ such that
+\[ V(u^\ast,x_0)=\sup\{ V(u,x_0)\mid u\in U_M \}.\]
+If there exists such a control $u^\ast$, then it is called an {\it optimal policy} or {\it optimal control}. The pair $(x^\ast,u^\ast)$, where $x^\ast$ is guaranteed by Theorem \ref{ExAdmisPair}, is called an {\it optimal pair}.
+
+
+
+\begin{remark}\rm
+The performance index \eqref{PiBolza} is said to be in the {\it Bolza form}. When $g= 0$ and $h\neq 0$, it is said to be in the {\it Mayer form}. Another form occurs when $h= 0$ and $g\neq 0$; in such a case, \eqref{PiBolza} is said to be in the {\it Lagrange form}. These three forms are equivalent; see, for instance, Cesari \cite[Sect. 1.9]{Cesari83}. 
+\end{remark} 
+
+%%------------------------------------------------------------------------------
+
+\subsection{Existence of optimal policies}
+
+
+
+
+\begin{assumption}
+The functions $g$ and $h$ in the performance index \eqref{PiBolza}
+ 
+\end{assumption}
+
+
+
+
+
+
+
+
+
+
+%%------------------------------------------------------------------------------
+\subsection{The maximum principle}
+
+
+The following lemma is a classical result in Calculus of Variations. We give a proof for completness.
+
+\begin{lemma}\label{VariatLemma} Let  
+
+\end{lemma}
+
+
+
+
+%%------------------------------------------------------------------------------
+\subsection{Sufficient conditions}
+
+
+
+
+
+

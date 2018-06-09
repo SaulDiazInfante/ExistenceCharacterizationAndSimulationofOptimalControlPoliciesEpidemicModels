@@ -1,0 +1,59 @@
+\paragraph{Standard SIR model with logistic grow.}
+We use the standard population model with logistic grow reported
+\cite{Schaefer2009}, see table for parameter description. To introduce the 
+vaccination and treatment as mitigation control policies, we firs deal with the
+uncontrolled dynamics described by:
+\begin{equation}
+	\begin{aligned}
+		\frac{dS}{dt} &=
+			\mu N  
+			- \beta \frac{S I}{N} 
+			- \mu \frac{N}{K} S 
+		\\
+		\frac{dI}{dt} &=
+			\beta \frac{S I}{N}
+			- \gamma I
+			- \mu \frac{N}{K} I
+		\\
+		\frac{dR}{dt} &= 
+			\gamma I 
+			- \mu \frac{N}{K} R 
+		\\
+		S(0) &= S_0, \quad
+		I(0) = I_0, \quad
+		R(0) = R_0
+		\\
+		N &= S + I +R
+		\\
+		\frac{dN}{dt} &=
+			\mu N 
+			\left(
+				1 - \frac{N}{K}
+			\right).
+	\end{aligned}
+\end{equation}
+
+%\begin{equation}
+%	\begin{aligned}
+%		\frac{dS}{dt} &=
+%			\mu N  
+%			- \beta \frac{S I}{N} 
+%			- \mu \frac{N}{K} S - u_1 S
+%		\\
+%		\frac{dI}{dt} &=
+%			\beta \frac{S I}{N}
+%			- (\gamma  + \mu) I 
+%			- \mu \frac{N}{K} I
+%			- u_2 I
+%		\\
+%		\frac{dR}{dt} &= 
+%			\gamma I 
+%			- \mu \frac{N}{K} R 
+%			+ u_1 S 
+%			+ u_2 I
+%		\\
+%		S(0) &= S_0, \quad
+%		I(0) = I_0, \quad
+%		R(0) = R_0. \quad
+%	\end{aligned}
+%\end{equation}

@@ -1,0 +1,29 @@
+Here we present the model reported in \cite*{Bolzoni2014} to describe a 
+outbreak of bovine tuberculosis. The regarding uncontrolled model reads
+\begin{equation}
+	\begin{aligned}
+		\dfrac{dS}{dt} &=
+			\underbrace{
+			r S 
+			\left (
+				1 - \dfrac{S+I}{K}
+			\right)
+			}_{:=G(S,I)}
+			 - \beta SI %- u S
+		\\
+		\dfrac{dI}{dt} &=
+			\beta SI - (\alpha + \mu) I.
+	\end{aligned}
+\end{equation}
+
+%\begin{equation}
+%	\begin{aligned}
+%		\dfrac{dS}{dt} &=
+%			r S \left (
+%				1 - \dfrac{S+I}{K}
+%			\right) - \beta SI - u S
+%		\\
+%		\dfrac{dI}{dt} &=
+%			\beta SI - (\alpha + \mu + u) I.
+%	\end{aligned}
+%\end{equation}

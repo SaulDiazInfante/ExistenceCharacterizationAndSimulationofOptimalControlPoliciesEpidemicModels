@@ -1,0 +1,89 @@
+\documentclass[a4paper]{article}
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[numbers]{natbib}
+\usepackage[a4paper,%
+						top=3cm,%
+						bottom=2cm,%
+						left=3cm,%
+						right=3cm,%
+						marginparwidth=1.75cm]{geometry}
+%% Useful packages
+\usepackage{amsmath,amsthm,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{booktabs}
+%
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+\newtheorem{proposition}{Proposition}
+%
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\s}{\subseteq}
+\newcommand{\e}{\varepsilon}
+%
+%
+%
+%%title
+\title{
+	Existence, characterization, and simulation
+	of optimal control policies in some classical epidemic models
+}
+%
+\author{Saul, Frank, David}
+%
+%%%
+
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+	Your abstract.
+\end{abstract}
+
+\section{Introduction}
+
+\section{Optimal control problems}
+[David]
+	\input{Pontryagin}
+
+
+\section{Classic epidemic models}
+[Saúl]
+
+
+
+\section{Control Policies in Epidemics}
+	[Saúl]
+    	\input{sec_control_epidemic_polices}
+    \subsection{Vaccination}
+    	\input{vacination_control_models}
+    \subsection{Treatment}
+    	\input{treatement_control_models}
+    \subsection{Quarantine}
+    	\input{quarantine_cotrol_models}
+    \subsection{Culling}
+    	\input{culling_control_models.tex}
+
+
+\section{Existence and characterization of optimal policies}
+[David]
+
+\section{Numerical results}
+[Frank, Saúl]
+
+\section{Concluding remarks}
+[Everybody]
+
+\bibliographystyle{plainnat}
+\bibliography{references,OptimalControl-ContinuousControledEpidemicModels}
+\end{document}

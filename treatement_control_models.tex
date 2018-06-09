@@ -1,0 +1,152 @@
+\paragraph{Two-strains Tuberculosis Model.}
+	Seeking to reduce the latent and infectious groups with the resistant-strain 
+	tuberculosis, in \cite{Lenhart2002} the authors  use controls ro represents 
+	two types of treatments in a tuberculosis model which consider the effect of 
+	treatment in two kinds of strains. The uncontrolled version is:
+	
+	\begin{equation}\label{eqn:two_strain_TB}
+	  \begin{aligned}
+	    \frac{dS}{dt} &=
+		    \Lambda - \beta_1 S \frac{I_1}{N} 
+		    - \beta^{*} S \frac{I_2}{N}
+		    - \mu S
+		  \\
+		  \frac{L_1}{dt} &=
+			  \beta_1 S \frac{I_1}{N}
+			  - (\mu + k_1) L_1
+			  +  p r_2 I_1
+				+ \beta_2 T \frac{I_1}{N}
+				- \beta^{*} L_1 \frac{I_2}{N}
+			\\
+			\frac{I_1}{dt} &= 
+				k_1 L_1
+				- (\mu + d_1) I_1
+				-r_2 I_1
+			\\
+			\frac{L_2}{dt} &=
+				q r_2 I_1
+				- (\mu + k_2) L_2
+				+ \beta^{*} (S + L_1 + T) \frac{I_2}{N}
+			\\
+			\frac{I_2}{dt} &=
+				k_2 L_2 - (\mu + d_2) I_2
+			\\
+			\frac{d T}{dt} &=
+				r_1 L_1
+				+ (1 - (p + q)) r_2 I_1
+				- \beta T \frac{I_1}{N}
+				- \beta^{*} T \frac{I_2}{N}
+				-\mu T ~.
+	  \end{aligned}
+	\end{equation}
+
+	\citeauthor*{Lenhart2002} consider time dependent 
+optimal control strategies associated with case holding and case finding based 
+% on the two-strain TB model \eqref{eqn:two_strain_TB}. They incorporates the 
+case finding control by adding a term which identifies and cure a fraction o 
+latent individuals. This control consequently reduces the rate of disease 
+development by latent individuals. The authors includes case holding by adding a 
+term which may decrease the treatment failure rate of individuals with sensitive 
+TB, so,this control reduce the incidence of drug resistant TB. 
+
+	Using $u_1(t)$ to denote the fraction of typical TB latent individuals that 
+is identified and will put under treatment---case finding control--- and
+$1 - u_2(t)$ to represent the effort that prevents the failure treatment in 
+typical TB infectious individuals, the two-strain-TB model 
+\eqref{eqn:two_strain_TB} becomes:
+\begin{equation}
+	  \begin{aligned}
+	    \frac{dS}{dt} &=
+		    \Lambda - \beta_1 S \frac{I_1}{N} 
+		    - \beta^{*} S \frac{I_2}{N}
+		    \mu S
+		  \\
+		  \frac{L_1}{dt} &=
+			  \beta_1 S \frac{I_1}{N}
+			  - (\mu + k_1) L_1
+			  - u_1 (t) r_1 L_1
+			  + (1 - u_2 (t)) p r_2 I_1
+				+ \beta_2 T \frac{I_1}{N}
+				- \beta^{*} L_1 \frac{I_2}{N}
+			\\
+			\frac{I_1}{dt} &= 
+				k_1 L_1
+				- (\mu + d_1) I_1
+				-r_2 I_1
+			\\
+			\frac{L_2}{dt} &=
+				(1 - u_2(t)) q r_2 I_1
+				- (\mu + k_2) L_2
+				+ \beta^{*} (S + L_1 + T) \frac{I_2}{N}
+			\\
+			\frac{I_2}{dt} &=
+				k_2 L_2 - (\mu + d_2) I_2
+			\\
+			\frac{d T}{dt} &=
+				u_1(t) r_1 L_1
+				+ (1 - (1 - u_2(t))(p + q)) r_2 I_1
+				- \beta T \frac{I_1}{N}
+				- \beta^{*} T \frac{I_2}{N}
+				-\mu T.
+	  \end{aligned}
+	\end{equation}
+
+In this context, the controls reduce the latent and infected 
+groups with resistant TB. However, case holding and case finding controls 
+produces a economic fee. In \cite{Lenhart2002} the authors use
+\begin{equation}
+	 J(u_1, u_2) =
+		 \int_0^{t_f}
+			 \left[
+				 L_2(t) + I_2(t) 
+				 + \frac{B_1}{2} u_1 ^ 2(t)
+				 + \frac{B_2}{2} u_2 ^ 2(t)
+			 \right]dt
+\end{equation}
+to describe the regarding cost 
+
+\begin{table}
+	\begin{center}
+		\begin{tabular}{@{}rll@{}} 
+			$S:$
+			&
+				Susceptible
+			\\
+			$I:$ 
+			&	Infected
+			\\
+			$R:$ 
+			&	Recover
+			\\
+			\\
+			%\toprule
+			\multicolumn{1}{c}{Parameter}
+			&
+			\multicolumn{1}{c}{Meaning}
+			& 
+			\multicolumn{1}{c}{Value}
+			\\
+				\midrule
+				$\beta$
+				& 
+					Transmission probability
+				&
+					---
+			\\
+				$\gamma$
+				&
+					Recover rate
+			\\
+				$\mu$
+				&
+					Natural death rate
+			\\
+				$K$
+				&
+					Carrying capacity
+			\\
+			\bottomrule
+		\end{tabular}
+		\caption{Variables and parameters description}
+	\end{center}
+\end{table}
