@@ -1,10 +1,9 @@
 \paragraph{SARS and genetic algorithms. [FRANK]}
-Xiefei Yan and Yun Zou report in \cite{Yan2008} a epidemic model for
-Severe acute respiratory syndrome (SARS) They use quarantine and isolation as
+\citeauthor{Yan2008} report in \cite{Yan2008} a epidemic model for
+Severe acute respiratory syndrome (SARS). They use quarantine and isolation as
 mitigation controls. The authors propose sub-optimal control policies and
-perform numeric simulations with genetic algorithms. Frist, we present the
-uncontrolled version used in the mentioned reference and formulated by Gummel 
-et. al. in \cite{Gumel2004}:
+perform numeric simulations with genetic algorithms. The
+controlled version used in the mentioned reference reads:
 %
 %
 \begin{equation}
@@ -12,38 +11,43 @@ et. al. in \cite{Gumel2004}:
 		\dfrac{dS}{dt} &=
 			\Lambda 
 			-\dfrac{
-				\beta S
+				S
 				\left(
-					I + \mathcal{E}_E E
-					+ \mathcal{Q}_Q Q
-					+ \mathcal{J}_J E
+					\beta I 
+					+ \mathcal{E}_E  \beta E
+					+ \mathcal{E}_Q  \beta Q
+					+ \mathcal{E}_J  \beta J
 				\right)
 			}{N}
+			- \mu S,
 		\\
 		\dfrac{dE}{dt} &=
 			p +
 			\dfrac{
 				\beta S
 				\left(
-					I + \mathcal{E}_E E
-						+ \mathcal{Q}_Q Q
-						+ \mathcal{J}_J E
+					\beta I 
+						+ \mathcal{E}_E \beta E
+						+ \mathcal{E}_Q \beta Q
+						+ \mathcal{E}_J \beta J
 				\right)
 			}{N}
-			-(\gamma + \kappa_1 + \mu) E
+			-(
+				u_1(t) + k_1 + \mu
+			)E,
 		\\
 		\dfrac{dQ}{dt} &=
-			\gamma_1 E 
-			- (\kappa_2 + \mu) Q
+			u_1(t) E 
+			- (k_2 + \mu) Q
 		\\
 		\dfrac{dI}{dt} &=
-			\kappa_1 E 
-			-(\gamma_2 + d_1  + \sigma_1 + \mu I)
+			k_1 E 
+			-(u(t)_2 + d_1  + \sigma_1 + \mu) I,
 		\\
 		\dfrac{dJ}{dt} &=
-			\gamma_2 I 
-			+ \kappa_2 Q
-			- (\sigma_2 + d_2 + \mu) J
+			u_2(t) I 
+			+ k_2 Q
+			- (d_2 + \sigma_2 + \mu) J,
 		\\
 		\dfrac{dR}{dt} &=
 			\sigma_1 I
