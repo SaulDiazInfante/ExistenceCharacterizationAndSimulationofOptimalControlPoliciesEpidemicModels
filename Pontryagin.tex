@@ -1,3 +1,5 @@
+We follow Cesari \cite{Cesari83} and Yong \cite{Yong2015} for OCPs. We assume some knowledge on ODEs \cite{Teschl} and real analysis \cite{Loeb2016}.
+
 \subsection{Deterministic OCPs in continuous time}
 
 Let $\mathbf{X}\s\R^n$ and $\mathbf{U}\s \R^m$ be nonempty sets. The sets $\mathbf{X}$ and $\mathbf{U}$ are 
@@ -30,7 +32,7 @@ for every $x,x_1\in \mathbf{X}$, $t\in[0,T]$, and $u\in \mathbf{U}$.
 \begin{proof} Let $u:[0,T]\to U$ be a measurable function. Consider the linear space 
     \[\mathbb{X}=\{X:[0,T]\to \R^n\mid X \mbox{ is continuous}\}\] 
 with the norm
-    \[ \|X\|_w:=\sup_{t\in[0,T]} \frac{|X(t)|}{w(t)}, \]
+    \[ \|X\|_w:=\sup_{t\in[0,T]} \frac{\|X(t)\|}{w(t)}, \]
 where $w(t):=e^{Lt}$ for each $t\in [0,T]$. It can be shown, with slight modifications in \cite[Section 2.1]{Teschl}, that the pair $(\mathbb{X},\|\cdot\|_w)$ is a Banach space. Define the operator $K:\mathbb{X}\to \mathbb{X}$ by 
     \[ K[X](t):=x_0 + \int_0^t f(s,X(s),u(s))ds.\]
 By \eqref{LipfInx} and \eqref{fBound}, any $(t,x,u)$ satisfies 
@@ -65,13 +67,13 @@ Therefore \eqref{CoDiffEq} holds almost everywhere \cite[Corollary 5.4.1]{Loeb20
 \end{assumption}
 
 
-Consider the {\it performance index} or {\it cost functional} of an admissible control $u$, given the initial state $x_0$, 
+Consider the {\it performance index} (or {\it cost functional} if we want to minimize) of an admissible control $u$, given the initial state $x_0$, 
         \begin{equation}\label{PiBolza} V(u,x_0) := \int_0^Tg(t,X(t),u(t))\,dt + h(X(T)),\end{equation}
 where $g:[0,T]\times \mathbf{X}\times \mathbf{U}\to \R$ and $h:\mathbf{X}\to\R$ are measurable.
 
 The {\it optimal control problem} (OCP) consists of finding an admissible control $u^\ast$ such that
 \[ V(u^\ast,x_0)=\sup\{ V(u,x_0)\mid u\in \mathbb{U}_M \}.\]
-If there exists such a control $u^\ast$, then it is called an {\it optimal policy} or {\it optimal control}. The pair $(X^\ast,u^\ast)$, where $X^\ast$ is given by Theorem \ref{ExAdmisPair}, is called an {\it optimal pair}.
+If there exists such a control $u^\ast$, then it is called an {\it optimal policy} or {\it optimal control}. The pair $(u^\ast,X^\ast)$, where $X^\ast$ is given by Theorem \ref{ExAdmisPair}, is called an {\it optimal pair}.
 
 
 
@@ -83,15 +85,28 @@ The performance index \eqref{PiBolza} is said to be in the {\it Bolza form}. Whe
 
 \subsection{Existence of optimal policies}
 
-
-
-
-\begin{assumption}
-The functions $g$ and $h$ in the performance index \eqref{PiBolza}
- 
+\begin{assumption} The sets $\mathbf{X}$,  $\mathbf{U}$, and $\mathbf{M}$ are compact. The functions $f$, $g$, and $h$ are continuous.
 \end{assumption}
+A proof of the following theorem can be found, for instance, in Cesari \cite[Sect. 9.3.]{Cesari83} or Yong \cite[Theorem 2.2.1]{Yong2015}. 
+\begin{theorem}[Filippov] Suppose that Assumptions 1, 2, and 3 hold. If, for almost every $t$ in $[0,T]$, each set
+        \begin{equation}\label{convexF(t,x)}
+F(t,x):= \{ (z, f(t,x,u))\in \mathbb{R}\times \mathbb{R}^n\mid  
+    z \leq g(t,x,u), \  u\in \mathbf{U}\},\qquad x\in X,
+        \end{equation}
+is convex, then there exists an optimal pair $(u^\ast,X^\ast)$.
+\end{theorem} 
+Next we give sufficient conditions for the set $F(t,x)$ to be convex. The epidemic models considered in this paper satisfy such conditions.
 
-
+\begin{remark} Suppose the set $\mathbf{U}$ is convex and, for each $(t,x)$, 
+\begin{enumerate}[\rm (a)]
+    \item the function $g(t,x,\cdot)$ is concave, i.e.,
+        \[ g(t,x,\lambda u+(1-\lambda)u') \geq \lambda g(t,x,u) +(1-\lambda) g(t,x,u') \quad \forall u,u'\in\mathbf{U},\  \lambda\in (0,1), \]
+       
+    \item the function $f(t,x,\cdot)$ is affine, i.e., 
+      \[ f(t,x,\lambda u+(1-\lambda)u') = \lambda f(t,x,u) +(1-\lambda) f(t,x,u') \quad \forall  u,u'\in\mathbf{U},\   \lambda\in (0,1). \]
+\end{enumerate} 
+Then the set $F(t,x)$ in \eqref{convexF(t,x)} is convex.
+\end{remark}
 
 
 
@@ -103,12 +118,12 @@ The functions $g$ and $h$ in the performance index \eqref{PiBolza}
 %%------------------------------------------------------------------------------
 \subsection{The maximum principle}
 
+%The following lemma is a classical result in Calculus of Variations. We give a proof for completeness.
 
-The following lemma is a classical result in Calculus of Variations. We give a proof for completness.
+%\begin{lemma}\label{VariatLemma} Let  \end{lemma}
+A proof of the following theorem can be found, for instance, in Cesari \cite[Theorem 5.1.i]{Cesari83} or Yong \cite[Theorem 2.3.1]{Yong2015}.
 
-\begin{lemma}\label{VariatLemma} Let  
 
-\end{lemma}
 
 
 
