@@ -6,13 +6,13 @@ Let $\mathbf{X}\s\R^n$ and $\mathbf{U}\s \R^m$ be nonempty sets. The sets $\math
 respectively called the {\it state space} and the {\it control space}. Consider 
 the following {\it control system}
 \begin{equation}\label{CoDiffEq}
-\dot{X}(t)=f(t,X(t),u(t)),\qquad t\in[0,T], \quad X(0)=x_0.
+\dot{X}(t)=f(t,X(t),u(t)), \quad X(0)=x_0,
 \end{equation}
 where $f:[0,T]\times \mathbf{X}\times \mathbf{U}\to \R^n$ and $u:[0,T]\to U$. 
 %In order to guarantee the existence of a solution $x$ to \eqref{CoDiffEq}, 
 %we need the following.
 
-\begin{assumption}\label{Assum1}  The function $f:[0,T]\times \mathbf{X}\times \mathbf{U}\to \R^n$
+\begin{assumption}\label{Assum1}\rm  The function $f:[0,T]\times \mathbf{X}\times \mathbf{U}\to \R^n$
 is measurable and there exists a constant $L>0$ such that
 \begin{eqnarray}
   \|f(t,x,u)-f(t,x_1,u)\| & \leq & L\|x-x_1\|\label{LipfInx}\\
@@ -56,13 +56,13 @@ Therefore \eqref{CoDiffEq} holds almost everywhere \cite[Corollary 5.4.1]{Loeb20
 	Given a measurable function $u$ and the solution $X_u(\cdot)$ to 
 \eqref{CoDiffEq}, the terminal state $X_u(T)$ can be constrained to belong to a set $M\s X$, in such a case we assume the following. 
 
-\begin{assumption} Let $M$ be a nonempty subset of $\mathbf{X}$. 
+\begin{assumption}\rm Let $\mathbf{B}$ be a nonempty subset of $\mathbf{X}$. 
 	The set of {\it admissible controls} 
 	\begin{equation}\label{FeasCont}  
-		 \mathbb{U}_M:=\{u:[0,T]\to \mathbf{U}\mid u\  
-		 \mbox{\rm is measurable and } X_u(T)\in M\} 
+		 \mathbb{U}_\mathbf{B}:=\{u:[0,T]\to \mathbf{U}\mid u\  
+		 \mbox{\rm is measurable and } X_u(T)\in \mathbf{B}\} 
 	\end{equation}
-	is nonempty. A pair $(u,X_u)$, where $u\in \mathbb{U}_M$, is called an 
+	is nonempty. A pair $(u,X_u)$, where $u\in \mathbb{U}_\mathbf{B}$, is called an 
 	{\it admissible pair}. To ease notation, we simply write $(u,X)$.
 \end{assumption}
 
@@ -72,8 +72,13 @@ Consider the {\it performance index} (or {\it cost functional} if we want to min
 where $g:[0,T]\times \mathbf{X}\times \mathbf{U}\to \R$ and $h:\mathbf{X}\to\R$ are measurable.
 
 The {\it optimal control problem} (OCP) consists of finding an admissible control $u^\ast$ such that
-\[ V(u^\ast,x_0)=\sup\{ V(u,x_0)\mid u\in \mathbb{U}_M \}.\]
+\[ V(u^\ast,x_0)=\sup\{ V(u,x_0)\mid u\in \mathbb{U}_B \}.\]
 If there exists such a control $u^\ast$, then it is called an {\it optimal policy} or {\it optimal control}. The pair $(u^\ast,X^\ast)$, where $X^\ast$ is given by Theorem \ref{ExAdmisPair}, is called an {\it optimal pair}.
+
+The elements of the OCP are given in the following seven-tuple 
+   \begin{equation}\label{OCP}
+       (\mathbf{X},\mathbf{U},\mathbf{B},f,g,h,T).
+   \end{equation}
 
 
 
@@ -85,25 +90,25 @@ The performance index \eqref{PiBolza} is said to be in the {\it Bolza form}. Whe
 
 \subsection{Existence of optimal policies}
 
-\begin{assumption} The sets $\mathbf{X}$,  $\mathbf{U}$, and $\mathbf{M}$ are compact. The functions $f$, $g$, and $h$ are continuous.
+\begin{assumption}\rm The sets $\mathbf{X}$,  $\mathbf{U}$, and $\mathbf{B}$ are compact. The functions $f$, $g$, and $h$ are continuous.
 \end{assumption}
 A proof of the following theorem can be found, for instance, in Cesari \cite[Sect. 9.3.]{Cesari83} or Yong \cite[Theorem 2.2.1]{Yong2015}. 
 \begin{theorem}[Filippov] Suppose that Assumptions 1, 2, and 3 hold. If, for almost every $t$ in $[0,T]$, each set
         \begin{equation}\label{convexF(t,x)}
-F(t,x):= \{ (z, f(t,x,u))\in \mathbb{R}\times \mathbb{R}^n\mid  
-    z \leq g(t,x,u), \  u\in \mathbf{U}\},\qquad x\in X,
+F(t,x):= \{ (\alpha, f(t,x,u))\in \mathbb{R}\times \mathbb{R}^n\mid  
+    \alpha \leq g(t,x,u), \  u\in \mathbf{U}\},\qquad x\in X,
         \end{equation}
 is convex, then there exists an optimal pair $(u^\ast,X^\ast)$.
 \end{theorem} 
 Next we give sufficient conditions for the set $F(t,x)$ to be convex. The epidemic models considered in this paper satisfy such conditions.
 
-\begin{remark} Suppose the set $\mathbf{U}$ is convex and, for each $(t,x)$, 
+\begin{remark}\rm Suppose the set $\mathbf{U}$ is convex and, for each $(t,x)$, 
 \begin{enumerate}[\rm (a)]
     \item the function $g(t,x,\cdot)$ is concave, i.e.,
-        \[ g(t,x,\lambda u+(1-\lambda)u') \geq \lambda g(t,x,u) +(1-\lambda) g(t,x,u') \quad \forall u,u'\in\mathbf{U},\  \lambda\in (0,1), \]
+        \[ g(t,x,\alpha u+(1-\alpha)u') \geq \alpha g(t,x,u) +(1-\alpha) g(t,x,u') \quad \forall u,u'\in\mathbf{U},\  \alpha\in (0,1), \]
        
     \item the function $f(t,x,\cdot)$ is affine, i.e., 
-      \[ f(t,x,\lambda u+(1-\lambda)u') = \lambda f(t,x,u) +(1-\lambda) f(t,x,u') \quad \forall  u,u'\in\mathbf{U},\   \lambda\in (0,1). \]
+      \[ f(t,x,\alpha u+(1-\alpha)u') = \alpha f(t,x,u) +(1-\alpha) f(t,x,u') \quad \forall  u,u'\in\mathbf{U},\   \alpha\in (0,1). \]
 \end{enumerate} 
 Then the set $F(t,x)$ in \eqref{convexF(t,x)} is convex.
 \end{remark}
@@ -118,19 +123,104 @@ Then the set $F(t,x)$ in \eqref{convexF(t,x)} is convex.
 %%------------------------------------------------------------------------------
 \subsection{The maximum principle}
 
-%The following lemma is a classical result in Calculus of Variations. We give a proof for completeness.
 
-%\begin{lemma}\label{VariatLemma} Let  \end{lemma}
-A proof of the following theorem can be found, for instance, in Cesari \cite[Theorem 5.1.i]{Cesari83} or Yong \cite[Theorem 2.3.1]{Yong2015}.
+Define the {\it Hamiltonian} for $(t,x,u,\lambda_0,\lambda)$ in $[0,T]\times \mathbf{X}\times \mathbf{U}\times\R\times\R^n$
+    \[H(t,x,u,\lambda_0,\lambda):= \lambda_0g(t,x,u) + \lambda^\top f(t,x,u).  \]  
+    
+
+\begin{assumption}\rm  %In addition to Assumptions 1, 2, and 3, the Hamiltonian satisfies the following.
+\begin{enumerate}[(a)]
+    \item The function $h$ is of class $\mathcal{C}^1$.
+%    \item For every $(u,x,\lambda_0,\lambda)$, the function $H(\cdot,x,u,\lambda_0,\lambda)$ is measurable.
+    \item For every $(t,u,\lambda_0,\lambda)$, the function $H(t,\cdot,u,\lambda_0,\lambda)$ is of class $\mathcal{C}^1$.
+    \item For every $(t,x,\lambda_0,\lambda)$, the functions
+     \[ H(t,x,\cdot,\lambda_0,\lambda) \mbox{ and }   H_x(t,x,\cdot,\lambda_0,\lambda)  \]
+are continuous.
+\end{enumerate}
+\end{assumption}
 
 
+The following theorem is proved in Yong \cite[Theorem 2.3.1]{Yong2015}.
+
+\begin{theorem}[Maximum Principle] Suppose Assumptions 3 and 4 hold and the set $\mathbf{B}$ is convex. Let $(u^\ast,X^\ast)$ be an optimal pair. Then there exists a constant $\lambda_0\geq 0$ and an absolutely continuous function $\lambda:[0,T]\to\R^n$, with
+    \begin{equation}\label{RegConL}
+        (\lambda_0)^2 + \|\lambda(T)-\lambda_0h_x(X^\ast(T))^\top\|^2 = 1,
+    \end{equation}
+that satisfy
+\begin{enumerate}[\rm (a)]
+    \item the maximum condition, for almost every $t\in[0,T]$, 
+        \begin{equation}\label{MaxCond}
+             H(t,X^\ast(t),u^\ast(t),\lambda_0,\lambda(t)) \geq  H(t,X^\ast(t),u,\lambda_0,\lambda(t)) \quad \forall u\in \mathbf{U},
+        \end{equation}
+\item the adjoint equation, for almost every $t\in[0,T]$, 
+      \begin{equation}\label{AdjEq}
+          \dot{\lambda}(t) = -H_x(t,X^\ast(t),u^\ast(t),\lambda_0,\lambda(t))^\top,  
+      \end{equation}
+\item and the transversality condition
+   \begin{equation}\label{TransCond}
+    [\lambda(T)^\top-\lambda_0h_x(X^\ast(T))] [y-X^\ast(T)]\geq 0 \quad \forall y\in \mathbf{B}.
+   \end{equation}
+\end{enumerate}
+\end{theorem}
 
 
+\begin{remark}\label{RemNoCons}\rm
+As pointed out by Yong \cite[p. 43]{Yong2015}, if $\mathbf{B}=\R^n$, then \eqref{TransCond} implies 
+  \[\lambda(T)-\lambda_0h_x(X^\ast(T))^\top=0\]
+  and so $\lambda_0=1$ by \eqref{RegConL}. In such a case, the Hamiltonian takes the form  
+      \[\mathcal{H}(t,x,u,\lambda):= g(t,x,u) + \lambda^\top f(t,x,u) = H(t,x,u,1,\lambda)  \]  
+    and the adjoint equation \eqref{AdjEq} and the transversality condition \eqref{TransCond} become 
+  %\begin{equation}
+    \[    \dot{\lambda}(t) = -g_x(t,X^\ast(t),u^\ast(t))^\top -  [f_x(t,X^\ast(t),u^\ast(t))]^\top \lambda(t), \quad \lambda(T)=h_x(X^\ast(T))^\top.
+  \]
+  % \end{equation} 
+  \end{remark}
+ 
 
 
 %%------------------------------------------------------------------------------
 \subsection{Sufficient conditions}
 
+
+Consider the OCP \eqref{OCP} with $\mathbf{B}=\R^n$ and $h\equiv 0$. Define
+\begin{eqnarray*}
+\mathcal{H}^\ast(t,x,\lambda) & := & \sup_{u\in\mathbf{U}}\mathcal{H}(t,x,u,\lambda)\\
+     & = & \sup_{u\in\mathbf{U}}\{g(t,x,u) + \lambda^\top f(t,x,u)\}.    
+\end{eqnarray*}
+
+\begin{assumption}\label{ConcavityH}\rm The functions $\mathcal{H}$ and $\mathcal{H}_x$ are continuous. 
+\end{assumption}
+
+\begin{assumption}\label{piecewise}\rm The functions $u^\ast:[0,T]\to\mathbf{U}$ and $X^\ast:[0,T]\to\mathbf{X}$ satisfy the following
+\begin{enumerate}[(a)]
+    \item $u^\ast$ is continuous on $[0,T]$ except at a finite number of points 
+    \item if $u^\ast$ is discontinuous at $t$, then  
+        \[\lim_{s\to t^-}u^\ast(s) \mbox{ and } \lim_{s\to t^+}u^\ast(s)\]
+        are finite,
+    \item $X^\ast$ is continuous on $[0,T]$, 
+    \item $\dot{X}^\ast$ exists and it is continuous on $[0,T]$ except at a finite number of points,
+    \item  if $\dot{X}^\ast$ is discontinuous at $t$, then  
+        \[\lim_{s\to t^-}\dot{X}(s) \mbox{ and } \lim_{s\to t^+}\dot{X}^\ast(s)\]
+        are finite. 
+\end{enumerate}
+\end{assumption}
+
+
+The following theorem is proved in Seierstad and Syds\ae ter \cite[Theorem 3]{SeiSyd77}.  
+
+\begin{theorem}\label{SufficientCond} Suppose that Assumption \ref{ConcavityH} holds. Let $(u^\ast,X^\ast)$ be an admissible pair that satisfies Assumption \ref{piecewise}. Suppose that there exists a continuous function $\lambda:[0,T]\to \R^n$ such that 
+   \begin{equation}
+       \mathcal{H}(t,X^\ast(t),u^\ast(t),\lambda(t)) \geq
+       \mathcal{H}(t,X^\ast(t),u,\lambda(t)) \quad \forall u\in\mathbf{U},
+   \end{equation}
+and, except at the points of discontinuity of $u^\ast$,
+    \begin{equation}
+         \dot{\lambda}(t) = -\mathcal{H}_x(t,X^\ast(t),u^\ast(t),\lambda_0,\lambda(t))^\top, \quad \lambda(T)=0.
+    \end{equation}
+If the set $\mathbf{X}$ is convex and, for each $(t,\alpha)$, the function $\mathcal{H}^\ast(t,\cdot,\alpha)$ is concave on $\mathbf{X}$, then $(u^\ast,X^\ast)$ is an optimal pair.
+\end{theorem}
+
+%\begin{assumption} The sets $\mathbf{X}$ and $\mathbf{U}$ are convex. The function $\mathcal{H}^\ast(t,\cdot,\lambda)$ is concave\end{assumption}
 
 
 
