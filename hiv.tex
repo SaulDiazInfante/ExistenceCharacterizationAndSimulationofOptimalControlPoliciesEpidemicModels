@@ -11,12 +11,13 @@ The optimal control problem reads:
 			A  T(t) - (1-u(t)) ^ 2 dt
 		\\
 		\text{s.t. }
+		\\
 			T'(t) &=
 				\frac{s}{1 + V(t)}
 				- m_1 T(t) 
 				+ r T(t)
 				\left[
-					1 - \frac{T(t)+ T_{I}(T)}{T_{max}}
+					1 - \frac{T(t)+ T_{I}(t)}{T_{max}}
 				\right] 
 				- u(t) k V(t) T(t),
 			\\
