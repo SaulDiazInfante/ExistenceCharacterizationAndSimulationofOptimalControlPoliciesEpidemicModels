@@ -16,6 +16,9 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
 %
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -33,6 +36,19 @@
 %
 %
 %%title
+\makeatletter
+\renewcommand{\Function}[2]{%
+  \csname ALG@cmd@\ALG@L @Function\endcsname{#1}{#2}%
+  \def\jayden@currentfunction{#1}%
+}
+\newcommand{\funclabel}[1]{%
+  \@bsphack
+  \protected@write\@auxout{}{%
+    \string\newlabel{#1}{{\jayden@currentfunction}{\thepage}}%
+  }%
+  \@esphack
+}
+\makeatother
 \title{
 	Existence, characterization, and simulation
 	of optimal control policies in some classical epidemic models
@@ -81,6 +97,7 @@ f^2_x
 	\section{Existence and characterization of optimal policies}
 		[David]
 	\section{Numerical results}
+		\input{numerical_methods}
 		[Frank, Saúl]
 	\section{Concluding remarks}
 		[Everybody]

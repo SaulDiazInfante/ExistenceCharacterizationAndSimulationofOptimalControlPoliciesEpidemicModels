@@ -1,0 +1,53 @@
+\subsection{Popular methods}
+\paragraph{Forward-Backward-Sweep}
+\cite{hackbusch1978numerical}
+\begin{algorithm}
+	\caption{Forward Backward Sweep } \label{alg:forward_backward_sweep}
+    \begin{flushleft}
+    	\hspace*{\algorithmicindent} \textbf{Input:} 
+    	$t_0, t_f, n_{max}, x_0,h, a, r, m, \epsilon, \lambda_{f}$ \\
+    	\hspace*{\algorithmicindent} \textbf{Output:} 
+   		$x^*, u^*, \lambda$
+   	\end{flushleft}
+	\begin{algorithmic}[1]
+		\Procedure{Forward backward sweep}{$g,\lambda_{\text{function}}, 
+        u, x_0, 
+        \lambda_f, h, n_{max}$} 
+			\While{$ \text{test} > \epsilon $}
+				\State $u_{\text{old}} \gets u$ 
+                \State $x_{\text{old}} \gets x$ 
+                \State $ x \gets$
+	                \Call{runge\_kutta\_forward}{$g, u, x_0, h$}
+                \State $\lambda_{\text{old}} \gets \lambda $
+				\State $\lambda \gets$ 
+					\Call{runge\_kutta\_backward}{%
+						$\lambda_{\text{function}}, x, \lambda_f, h$
+					}
+                \State $u_1 \gets$ 
+                \Call{optimality\_condition}{$u, x, \lambda$}
+                %
+                \State 
+                	$u \gets \alpha u_1 + (1-\alpha)u_{old}, 
+                	\qquad \alpha \in [0, 1]$
+                \Comment{convex combination}
+                \State 
+                	$\epsilon_u \gets \displaystyle 
+                	\frac{||u - u_{\text{old}}||}{||u||}$
+                \State 
+                	$\epsilon_x \gets \displaystyle 
+                	\frac{||x - x_{\text{old}}||}{||x||}$
+                \Comment{relative error}
+                \State 
+                	$\epsilon_{\lambda} \gets \displaystyle 
+                	\frac{||\lambda - \lambda_{\text{old}}||}{||\lambda||}$
+                \State 
+                	$\epsilon \gets 
+                		\max{ 
+                			\{ \epsilon_u, \epsilon_x, \epsilon_{\lambda} \}
+                		}$
+			\EndWhile\label{}
+			\State \textbf{return} $ x^*, u^*, \lambda$
+            \Comment{Optimal pair}
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
