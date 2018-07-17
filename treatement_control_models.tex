@@ -115,38 +115,42 @@ to describe the regarding cost.
             \\
         \midrule
         $\beta_1$ 
-            & Probability that a susceptible individual
+            & Probability that a susceptible 
             \\
-            & becomes infected.
+            & individual becomes infected.
             & \num{13.0}            
             \\
         $\beta_2$ 
-        	& Probability that a recovered individual 
+        	& Probability that a recovered 
         	\\
-        	& become infected by one infectious individual
+        	& individual  become infected
         	& \num{13.0}
         	\\
         $\beta_3$ 
-        	& Probability that a uninfected individual
+        	& Probability that a uninfected 
         	\\
-        	& become infected by resistant-TB
+        	& individual become infected 
             & \num{0.0131}, 
-            	\num{0.0217}, 
-            	\num{0.029}, 
-            	\num{0.0436}
+              \num{0.0217},
+            \\
+            & by resistant-TB 
+            & \num{0.029}, 
+              \num{0.0436}
        		\\
+     	\\
      	$\mu$ 
-     	    & Natural per-capita natural death rate.
+     	    & Natural per-capita death rate.
      	    & \num{0.0143}
 			\\
      	$d_1$ 
-     	    & Per-capita disease death rate by TB.
+     	    & Per-capita death rate by TB.
      	    & \num{0.0}
      	    \\
      	$d_2$ 
      	   	& Per-capita  death rate by MDR-TB.
      	   	& \num{0.0}
      	    \\
+     	\\
      	$k_1$ 
      		& Rate at which an latent TB 
      		\\
@@ -179,7 +183,8 @@ to describe the regarding cost.
      	    & \num{0.4}, \num{0.1}
      	    \\
      	    & for TB or MDRTB respectively
-			\\
+		\\
+		\\	
 			$N$ 
 			& Total population size
 			& 
@@ -194,7 +199,8 @@ to describe the regarding cost.
             $t_f$ 
             & Final time 
             & \num{5.0} years
-            \\
+      \\
+      \\
      	    $B_1$ 
      	    & Systematic cost of the 
      	    \\
@@ -211,33 +217,31 @@ to describe the regarding cost.
             & Control upper bound & $0.95$
        		\\
        		\\
-		\multicolumn{2}{c}{\textbf{Initial Conditions}}
+		&\multicolumn{2}{c}{\textbf{Initial Conditions}}
 		\\
-		\cmidrule{1-2}
+		\cmidrule{2-3}
 		\\
-		\multicolumn{1}{r}{$S(0)$} 
+		&\multicolumn{1}{r}{$S(0)$} 
 		&
-		\multicolumn{1}{c}{ $(76/120)N$}
+		\multicolumn{1}{l}{ $(76/120)N$}
 		\\
-		\multicolumn{1}{r}{$L_1(0)$}
+		&\multicolumn{1}{r}{$L_1(0)$}
 		& 
-		\multicolumn{1}{c}{$(36/120)N$}
+		\multicolumn{1}{l}{$(36/120)N$}
 		\\
-		\multicolumn{1}{r}{$I_1(0)$} 
+		&\multicolumn{1}{r}{$I_1(0)$} 
 		& 
-		\multicolumn{1}{c}{$(4/120)N$}
+		\multicolumn{1}{l}{$(4/120)N$}
 		\\
-		\multicolumn{1}{r}{$L_2(0)$} 
-		& 
-		\multicolumn{1}{c}{$(2/120) N$}
+		&\multicolumn{1}{r}{$L_2(0)$}  
+		&\multicolumn{1}{l}{$(2/120) N$}
 		\\
-		\multicolumn{1}{r}{$I_2(0)$}
-		& 
-		\multicolumn{1}{c}{$(1/120)N$}
+		&\multicolumn{1}{r}{$I_2(0)$}
+		&\multicolumn{1}{l}{$(1/120)N$}
 		\\
-		\multicolumn{1}{r}{$T(0)$}
+		&\multicolumn{1}{r}{$T(0)$}
 		& 
-		\multicolumn{1}{c}{$(1/120)N$}
+		\multicolumn{1}{l}{$(1/120)N$}
 		\\
 		\bottomrule
     \end{tabular}
