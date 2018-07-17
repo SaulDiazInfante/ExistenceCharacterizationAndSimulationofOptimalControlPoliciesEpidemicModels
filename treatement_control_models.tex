@@ -108,50 +108,150 @@ strategies produces a economic fee. In \cite{Lenhart2002} the authors use
 \end{equation}
 to describe the regarding cost.
 \begin{table}
-	\begin{center}
-		\begin{tabular}{@{}rll@{}} 
-			$S:$
-			&
-				Susceptible
+	\centering
+	\begin{tabular}{rll}
+		\toprule
+			& \multicolumn{1}{c}{\textbf{Description}} & \textbf{Simulation values}
+            \\
+        \midrule
+        $\beta_1$ 
+            & Probability that a susceptible individual
+            \\
+            & becomes infected.
+            & \num{13.0}            
+            \\
+        $\beta_2$ 
+        	& Probability that a recovered individual 
+        	\\
+        	& become infected by one infectious individual
+        	& \num{13.0}
+        	\\
+        $\beta_3$ 
+        	& Probability that a uninfected individual
+        	\\
+        	& become infected by resistant-TB
+            & \num{0.0131}, 
+            	\num{0.0217}, 
+            	\num{0.029}, 
+            	\num{0.0436}
+       		\\
+     	$\mu$ 
+     	    & Natural per-capita natural death rate.
+     	    & \num{0.0143}
 			\\
-			$I:$ 
-			&	Infected
+     	$d_1$ 
+     	    & Per-capita disease death rate by TB.
+     	    & \num{0.0}
+     	    \\
+     	$d_2$ 
+     	   	& Per-capita  death rate by MDR-TB.
+     	   	& \num{0.0}
+     	    \\
+     	$k_1$ 
+     		& Rate at which an latent TB 
+     		\\
+     		& individual becomes infectious. 
+     		& \num{0.5}
+ 			\\
+     	    $k_2$  
+     	    & Rate at which an latent individual
+     	    \\
+     	    & with MDR-TB becomes infectious.
+     	    & \num{1.0}
 			\\
-			$R:$ 
-			&	Recover
+		$r_1$ & 
+      		Treatment recover rate of 
+      		\\
+      		& individuals with latent TB.
+      		& \num{2.0}
+     	    \\
+		$r_2$ 
+			& Treatment rate recover of 
 			\\
+			& individuals with infectious TB.
+		
+			& \num{1.0}
+     	    \\
+     	    $p$, $q$
+     	    & Proportion of infectious individuals 
+     	    \\
+     	    & that not complete the treatment  
+     	    & \num{0.4}, \num{0.1}
+     	    \\
+     	    & for TB or MDRTB respectively
 			\\
-			%\toprule
-			\multicolumn{1}{c}{Parameter}
-			&
-			\multicolumn{1}{c}{Meaning}
+			$N$ 
+			& Total population size
 			& 
-			\multicolumn{1}{c}{Value}
+			\num{6000}, 
+			\num{12000}, 
+			\num{30000}
+            \\
+			$\Lambda$ 
+				& Recruitment rate
+				& $\mu N$
+            \\
+            $t_f$ 
+            & Final time 
+            & \num{5.0} years
+            \\
+     	    $B_1$ 
+     	    & Systematic cost of the 
+     	    \\
+     	    & case finding  control
+     	    & \num{50.0}
 			\\
-				\midrule
-				$\beta$
-				& 
-					Transmission probability
-				&
-					---
+     	    $B_2$
+     	    & 
+     	    Cost of the case holding strategy
+     	    & \num{500.0}
+     	    \\
+     	    & Control lower bound  & $0.05$
 			\\
-				$\gamma$
-				&
-					Recover rate
-			\\
-				$\mu$
-				&
-					Natural death rate
-			\\
-				$K$
-				&
-					Carrying capacity
-			\\
-			\bottomrule
-		\end{tabular}
-		\caption{Variables and parameters description}
-	\end{center}
+            & Control upper bound & $0.95$
+       		\\
+       		\\
+		\multicolumn{2}{c}{\textbf{Initial Conditions}}
+		\\
+		\cmidrule{1-2}
+		\\
+		\multicolumn{1}{r}{$S(0)$} 
+		&
+		\multicolumn{1}{c}{ $(76/120)N$}
+		\\
+		\multicolumn{1}{r}{$L_1(0)$}
+		& 
+		\multicolumn{1}{c}{$(36/120)N$}
+		\\
+		\multicolumn{1}{r}{$I_1(0)$} 
+		& 
+		\multicolumn{1}{c}{$(4/120)N$}
+		\\
+		\multicolumn{1}{r}{$L_2(0)$} 
+		& 
+		\multicolumn{1}{c}{$(2/120) N$}
+		\\
+		\multicolumn{1}{r}{$I_2(0)$}
+		& 
+		\multicolumn{1}{c}{$(1/120)N$}
+		\\
+		\multicolumn{1}{r}{$T(0)$}
+		& 
+		\multicolumn{1}{c}{$(1/120)N$}
+		\\
+		\bottomrule
+    \end{tabular}
+	\caption{Parameters description and simulation values for the control problem 
+	eq(*)}
 \end{table}
+
+
+
+
+
+
+
+
 
 In figure [] we show the effect of case finding and case holding controls.
 
