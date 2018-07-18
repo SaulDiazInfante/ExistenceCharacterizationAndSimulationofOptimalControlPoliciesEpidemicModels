@@ -162,7 +162,8 @@ to describe the regarding cost.
      	    \\
      	    & with MDR-TB becomes infectious.
      	    & \num{1.0}
-			\\
+		\\
+		\\
 		$r_1$ & 
       		Treatment recover rate of 
       		\\
@@ -182,7 +183,7 @@ to describe the regarding cost.
      	    & that not complete the treatment  
      	    & \num{0.4}, \num{0.1}
      	    \\
-     	    & for TB or MDRTB respectively
+     	    & for TB or MDR-TB respectively
 		\\
 		\\	
 			$N$ 
@@ -242,25 +243,31 @@ to describe the regarding cost.
     \end{tabular}
 	\caption{Parameters description and simulation values for the control 
 	problem \eqref{eqn:MDR-TB_model}.}
+	\label{tbl:parameters_MDR-TB_model}
 \end{table}
 
 
+	In \cref{fig:figure1twostraintbm} we show the effect of case finding and 
+case holding controls. The combination of this strategies diminish the multi 
+drug resistant population. In \cref{tbl:parameters_MDR-TB_model} we compile the 
+parameters description and values used to produce this figure and fix 
+$N = \num{30000}$, $\beta_3 = \num{0.29}$. To minimize the resistant TB 
+population, L2 + I2, the simulation suggest that the case holding strategy 
+$u_2$ would be at the upper bound during almost \num{4.3} years and then 
+decreasing to the lower bound. Meanwhile, decreasing value for case finding
+must apply over the most of the simulated time, 5 years. The total number of 
+infected resistant TB $L2 + I2$  at the final time $t_f = 5(years)$ results
+\num{1123}. This same number but without control sums 4176. So this policies 
+prevents  \num{3053} (= 4176 − 1123) cases of resistant TB.
 
-
-
-
-
-
-
-In figure [] we show the effect of case finding and case holding controls.
 
 \begin{figure}
   \centering
   \includegraphics[width=0.7\linewidth]{Figures/figure_1_two_strain_tbm}
   \caption{Normalized infected population according to the parameters in 
-  table [*]. Here the green line represents the infected population whitout 
+  table [*]. Here the green line represents the infected population without 
   control. As we see, case finding $u_1(t)$ and case holding $u_2(t)$, 
-  dramatically diminish the density of infected with multiresistan TB.}
+  dramatically diminish the density of infected with resistant TB.}
   \label{fig:figure1twostraintbm}
 \end{figure}
 

@@ -9,15 +9,15 @@
 	\caption{Forward Backward Sweep } \label{alg:forward_backward_sweep}
     \begin{flushleft}
     	\hspace*{\algorithmicindent} \textbf{Input:} 
-    	$t_0, t_f, n_{max}, x_0,h, a, r, m, \epsilon, \lambda_{f}$ \\
+    	$t_0, t_f, x_0,h, \text{tol}, \lambda_{f}$ \\
     	\hspace*{\algorithmicindent} \textbf{Output:} 
    		$x^*, u^*, \lambda$
    	\end{flushleft}
-	\begin{algorithmic}[1]
+	\begin{algorithmic}
 		\Procedure{Forward backward sweep}{$g,\lambda_{\text{function}}, 
         u, x_0, 
         \lambda_f, h, n_{max}$} 
-			\While{$ \text{test} > \epsilon $}
+			\While{$ \epsilon > \text{tol}  $}
 				\State $u_{\text{old}} \gets u$ 
                 \State $x_{\text{old}} \gets x$ 
                 \State $ x \gets$
