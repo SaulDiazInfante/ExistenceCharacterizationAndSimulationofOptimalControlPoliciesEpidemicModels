@@ -1,11 +1,11 @@
-\paragraph{Control Chemotherapy for HIV} 
+\subsubsection*{Control Chemotherapy for HIV} 
 	Now we discuss a optimal control mode to describe the effect of chemotherapy
 in the interaction between the HIV virus and $CD4^+T$ cells 
 \cite{butler1997optimal}.
 
 
 The optimal control problem reads:
-\begin{equation}
+\begin{equation} \label{eqn:hiv_infect}
 	\begin{aligned}
 		\max_{u} & \int_{0}^{t_{final}}
 			A  T(t) - (1-u(t)) ^ 2 dt
@@ -32,32 +32,61 @@ The optimal control problem reads:
 
 \begin{table}
 	\centering
-	\begin{tabular}{ll}
+	\begin{tabular}{rll}
 		\toprule
-			\textbf{Parameters} & \textbf{Values}
+			&\textbf{Description} & \textbf{Value}
             \\
         \midrule
-            $\mu_1$ & 0.02
+		$\mu_1$ 
+        	& Death rate of uninfected $CDT^+T$ cells
+        	& \SI{0.02}{d^{-1}} 
             \\
-        	$\mu_2$ & 0.2
+		$\mu_2$ 
+       		& Death rate of infected $CDT^+T$ cells
+		    & \SI{0.2}{d^{-1}}
 			\\
-            $\mu_3$ & 4.4
+		$\mu_3$ 
+      		& Death rate of free virus
+		    & \SI{4.4}{d^{-1}}
             \\
-     	    $k$ & 0.000024
+        $k$ 
+        	& rate $CD4^+T$ cells become infected by free virus
+        	& \SI{0.000024}{\milli\meter^3 d^{-1}}
  			\\
-     	    $r$ & 0.03
+		$r$ 
+			& rate of growth for the $CD4^+T$ cell population
+			& \SI{0.03}{d^{-1}}
      	    \\
-     	    $N$ & 300
+     	$N$ 
+     		& Number of free virus produced by infected cells
+     		& \num{300}
             \\
-     	    $T_{\text{max}}$ & 1500
-     	    \\
-     	    $s$ & 10
-			\\
-     	    $B$ & 10
-     	    \\
+     	$T_{\max{}}$ 
+     		& Maximum $CD4^+T$ cell population level
+     		& \SI{1500}{\milli \meter ^ {-3}}
+     		\\
+     	$s$ 
+     		& Source term for uninfected $CD4^{+}T$ cells
+     		& \SI{10}{d^{-1}\milli \meter ^{-3}}
+		\\
+		\\
+	    &&
+	    \textbf{Initial conditions}
+	    \\
+	    \cmidrule{3-3}
+	    && $T(0) = \num{806.4}$
+	    \\
+	    && $T_{I}(0)=\num{0.04}$
+	    \\
+	    && $V(0)= \num{1.5}$
+	    \\
 		\bottomrule
     \end{tabular}
-	\caption{Values for the parameters}
+	\caption{
+		Description and simulation parameters for the optimal control model
+		\eqref{eqn:hiv_infect}.
+	}
+	\label{tbl:hiv_infect}
 \end{table}
 
 

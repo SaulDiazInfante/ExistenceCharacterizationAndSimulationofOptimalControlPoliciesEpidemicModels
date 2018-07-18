@@ -10,7 +10,7 @@ controlled version reads:
 %	  \begin{aligned}
 %	    \frac{dS}{dt} &=
 %		    \Lambda - \beta_1 S \frac{I_1}{N} 
-%		    - \beta^{*} S \frac{I_2}{N}
+%		    - \beta_3 S \frac{I_2}{N}
 %		    - \mu S
 %		  \\
 %		  \frac{L_1}{dt} &=
@@ -18,7 +18,7 @@ controlled version reads:
 %			  - (\mu + k_1) L_1
 %			  +  p r_2 I_1
 %				+ \beta_2 T \frac{I_1}{N}
-%				- \beta^{*} L_1 \frac{I_2}{N}
+%				- \beta_3 L_1 \frac{I_2}{N}
 %			\\
 %			\frac{I_1}{dt} &= 
 %				k_1 L_1
@@ -28,7 +28,7 @@ controlled version reads:
 %			\frac{L_2}{dt} &=
 %				q r_2 I_1
 %				- (\mu + k_2) L_2
-%				+ \beta^{*} (S + L_1 + T) \frac{I_2}{N}
+%				+ \beta_3 (S + L_1 + T) \frac{I_2}{N}
 %			\\
 %			\frac{I_2}{dt} &=
 %				k_2 L_2 - (\mu + d_2) I_2
@@ -37,17 +37,17 @@ controlled version reads:
 %				r_1 L_1
 %				+ (1 - (p + q)) r_2 I_1
 %				- \beta T \frac{I_1}{N}
-%				- \beta^{*} T \frac{I_2}{N}
+%				- \beta_3 T \frac{I_2}{N}
 %				-\mu T ~.
 %	  \end{aligned}
 %	\end{equation}
 %
 %
-	\begin{equation}\label{eqn:TB}
+	\begin{equation}\label{eqn:MDR-TB_model}
 	  \begin{aligned}
 	    \frac{dS}{dt} &=
 		    \Lambda - \beta_1 S \frac{I_1}{N} 
-		    - \beta^{*} S \frac{I_2}{N}
+		    - \beta_3 S \frac{I_2}{N}
 		    \mu S
 		  \\
 		  \frac{L_1}{dt} &=
@@ -56,7 +56,7 @@ controlled version reads:
 			  - u_1 (t) r_1 L_1
 			  + (1 - u_2 (t)) p r_2 I_1
 				+ \beta_2 T \frac{I_1}{N}
-				- \beta^{*} L_1 \frac{I_2}{N}
+				- \beta_3 L_1 \frac{I_2}{N}
 			\\
 			\frac{I_1}{dt} &= 
 				k_1 L_1
@@ -66,7 +66,7 @@ controlled version reads:
 			\frac{L_2}{dt} &=
 				(1 - u_2(t)) q r_2 I_1
 				- (\mu + k_2) L_2
-				+ \beta^{*} (S + L_1 + T) \frac{I_2}{N}
+				+ \beta_3 (S + L_1 + T) \frac{I_2}{N}
 			\\
 			\frac{I_2}{dt} &=
 				k_2 L_2 - (\mu + d_2) I_2
@@ -75,7 +75,7 @@ controlled version reads:
 				u_1(t) r_1 L_1
 				+ (1 - (1 - u_2(t))(p + q)) r_2 I_1
 				- \beta T \frac{I_1}{N}
-				- \beta^{*} T \frac{I_2}{N}
+				- \beta_3 T \frac{I_2}{N}
 				-\mu T.
 	  \end{aligned}
 	\end{equation}
@@ -88,7 +88,7 @@ cure a fraction o latent individuals. Case finding consequently reduces the
 rate of disease development by latent individuals. The authors includes case 
 holding by adding a term which may decrease the treatment failure rate of 
 individuals with sensitive  TB, so, this control reduce the incidence of drug 
-resistant TB. In model \eqref{eqn:TB}, $u_1$ denotes the fraction of 
+resistant TB. In model \eqref{eqn:MDR-TB_model}, $u_1$ denotes the fraction of 
 typical TB latent individuals that is identified and will put under 
 treatment \textemdash case finding control \textemdash and $1 - u_2$ represents 
 the effort that prevents the failure treatment in typical TB infectious 
@@ -217,36 +217,31 @@ to describe the regarding cost.
             & Control upper bound & $0.95$
        		\\
        		\\
-		&\multicolumn{2}{c}{\textbf{Initial Conditions}}
+		&&\multicolumn{1}{c}{\textbf{Initial Conditions}}
 		\\
-		\cmidrule{2-3}
+		\cmidrule{3-3}
+		&&	
+		$S(0) = (76/120)N$
 		\\
-		&\multicolumn{1}{r}{$S(0)$} 
-		&
-		\multicolumn{1}{l}{ $(76/120)N$}
+		&&
+		$L_1(0) = (36/120) N$
 		\\
-		&\multicolumn{1}{r}{$L_1(0)$}
-		& 
-		\multicolumn{1}{l}{$(36/120)N$}
+		&&
+		$I_1(0) = (4/120)N$
 		\\
-		&\multicolumn{1}{r}{$I_1(0)$} 
-		& 
-		\multicolumn{1}{l}{$(4/120)N$}
+		&&
+		$L_2(0) =(2/120) N$
 		\\
-		&\multicolumn{1}{r}{$L_2(0)$}  
-		&\multicolumn{1}{l}{$(2/120) N$}
+		&&
+		$I_2(0) = (1/120)N$
 		\\
-		&\multicolumn{1}{r}{$I_2(0)$}
-		&\multicolumn{1}{l}{$(1/120)N$}
-		\\
-		&\multicolumn{1}{r}{$T(0)$}
-		& 
-		\multicolumn{1}{l}{$(1/120)N$}
+		&&
+		$T(0)= (1/120)N$
 		\\
 		\bottomrule
     \end{tabular}
-	\caption{Parameters description and simulation values for the control problem 
-	eq(*)}
+	\caption{Parameters description and simulation values for the control 
+	problem \eqref{eqn:MDR-TB_model}.}
 \end{table}
 
 
