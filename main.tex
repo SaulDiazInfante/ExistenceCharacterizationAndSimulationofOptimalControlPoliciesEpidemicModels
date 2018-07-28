@@ -20,7 +20,7 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{siunitx}
 \usepackage{cleveref}
-
+\usepackage[section]{placeins}
 %
 \newtheorem{theorem}{Theorem}
 \newtheorem{lemma}{Lemma}
@@ -89,15 +89,15 @@ f^2_x
 	\section{Control Policies in Epidemics}
 	[Saúl]
     	\input{sec_control_epidemic_polices}
-      \subsection{Vaccination}
+      \section{Vaccination}
       		\input{epidemic_model}
 	    	\input{vacination_control_models}
-	    \subsection{Treatment}
+	    \section{Treatment}
 	    	\input{treatement_control_models}
 	    	\input{hiv}
-	    \subsection{Quarantine}
+	    \section{Quarantine and isolation}
 	    	\input{quarantine_cotrol_models}
-	    \subsection{Culling}
+	    \section{Culling}
 	    	\input{culling_control_models.tex}
 	\section{Existence and characterization of optimal policies}
 		[David]
