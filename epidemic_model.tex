@@ -1,40 +1,101 @@
-Here we consider a standard epidemic model to describe the dynamics of a 
+  Here we consider a standard epidemic model to describe the dynamics of a 
 disease. We use optimal control techniques to find a vaccination
-schedule for the disease. Our goal is to minimize the number of infectious 
+schedule for the disease. Goal is to minimize the number of infectious 
 persons and the overall cost of the vaccine during a fixed time period. 
 
-Let $S(t)$ be the number of susceptible individuals, $I(t)$ the
-number of infectious individuals, and $R(t)$ the recovered (inmune)  at time
-$t$. Also, we consider a class that represent the number of exposed or latent
-individuals at time $t$, $E(t)$. 
-Finally, let $N(t) = S(t) + E(t) + I(t) + R (t)$,
-be the total number of people in the population.
+  Here $S(t)$,$I(t)$,$R(t)$ respectively denote the number of susceptible 
+infectious, and recovered (immune) individuals at time $t$. The model also 
+consider a class that represent the number of exposed $E(t)$. 
+Then the whole population $N$ is given by $N(t) = S(t) + E(t) + I(t) + R (t)$,
+and obeys the last equation of model \eqref{eqn:epidemics_lenhart}.
 
-Let $u(t)$, the control, be the percentage of susceptible individual being 
-vaccinated per unit of time. As vaccination of the entire susceptible population
-is impossible, we bound the control with $0 \leq u(t) \leq 0.9$. Let $b$ be the
-natural exponential birth rate of the population and $d$ the natural exponential
-death rate. 
+The control $u(t)$ is a fraction of susceptible individual being 
+vaccinated per unit of time. Since vaccination of the entire susceptible 
+population is impractical, the model considers $0 \leq u(t) \leq 0.9$. 
 
-The optimal control problem is as follows,
+Hence, the optimal control problem reads\em parameters in 
+\Cref{tbl:epidemics_lenhart}.
 
-$$
-    \min_{u} J(u) = \min_{u} \int_{0}^{1} AI(t) + u^{2}(t) dt,
-$$
-subject to
-\begin{align*}
-    \dot{S}(t) &=
-        bN(t) - dS(t) - cS(t)I(t) - u(t)S(t) \quad, S(0) = S_0 \geq 0,   \\
-    \dot{E}(t) &=
-        cS(t)I(t) - (e + d)E(t) \quad, E(0) = E_0 \geq 0,    \\
-    \dot{I}(t) &=
-        eE(t) - (g + a +d)I(t) \quad, I(0) = I_0 \geq 0,     \\
-    \dot{R}(t) &=
-        gI(t) -dR(t) + u(t)S(t) \quad, R(0) = R_0 \geq 0,    \\
-    \dot{N}(t) &=
-        (b - d)N(t) - aI(t) \quad, N(0) = N_0 \geq 0,        \\
-\end{align*}
-where $0 \leq u(t) \leq 0.9$. Note that the disease free state is 
+
+\begin{equation} \label{eqn:epidemics_lenhart}
+  \begin{aligned}
+    \min_{u} & \int_{0}^{T} AI(t) + u^{2}(t) dt,
+    \\
+    \text{subject to}
+    \\
+      \dot{S}(t) &=
+          bN(t) - dS(t) - cS(t)I(t) - u(t)S(t), \quad S(0) = S_0 \geq 0,   \\
+      \dot{E}(t) &=
+          cS(t)I(t) - (e + d)E(t), \quad E(0) = E_0 \geq 0,    \\
+      \dot{I}(t) &=
+          eE(t) - (g + a +d)I(t), \quad I(0) = I_0 \geq 0,     \\
+      \dot{R}(t) &=
+          gI(t) -dR(t) + u(t)S(t), \quad R(0) = R_0 \geq 0,    \\
+      \dot{N}(t) &=
+          (b - d)N(t) - aI(t), \quad N(0) = N_0 \geq 0,        \\
+  \end{aligned}
+\end{equation}
+
+\begin{table}[htb]
+  \begin{center}
+    \begin{tabular}{rll}
+      \toprule
+        & \multicolumn{1}{c}{\textbf{Description}} 
+        & \textbf{Simulation values}
+        \\
+      \midrule
+        $b$
+          & Recruitment rate
+          & \num{0.525}
+        \\
+        $a$, $d$ 
+          & Disease and natural death rates
+          & \num{0.2}, \num{0.5}
+        \\
+        $c$
+          & Incidence of disease
+          & \num{0.0001}
+        \\
+        $e$
+          & Rate at which the exposed 
+          & \num{0.5}
+          \\
+          & individuals become infectious
+        \\
+        $g$
+          & Recovering rate
+          & \num{0.1}
+        \\
+        $A$
+          & Vaccination cost
+          & \num{0.1}
+        \\
+        $T$
+          & Final time
+          & \num{20.0}
+        \\
+        \\
+        && 
+        \multicolumn{1}{c}{
+          \textbf{Initial conditions}
+        }
+        \\
+        \cmidrule{3-3}
+          &&
+            $S(0) = \num{1000}$, $E(0) = \num{100}$
+          \\
+          &&
+            $I(0) = \num{50}$, $R(0) = \num{15}$
+        \\
+      \bottomrule
+    \end{tabular}
+    \caption{Parameters and simulation values of the epidemic model
+      \eqref{eqn:epidemics_lenhart}}
+    \label{tbl:epidemics_lenhart}
+  \end{center}
+\end{table}
+
+ Note that the disease free state is 
 $(bN/d,0,0,0)$.
 
 The Hamiltonian for this problem is
