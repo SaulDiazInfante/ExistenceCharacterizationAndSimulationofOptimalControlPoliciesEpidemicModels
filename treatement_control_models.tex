@@ -107,7 +107,7 @@ strategies produces a economic fee. In \cite{Lenhart2002} the authors use
 			 \right]dt,
 \end{equation}
 to describe the regarding cost.
-\begin{table}
+\begin{table}[b]
 	\centering
 	\begin{tabular}{rll}
 		\toprule
@@ -247,9 +247,9 @@ to describe the regarding cost.
 \end{table}
 
 
-	In \cref{fig:figure1twostraintbm} we show the effect of case finding and 
+	In \Cref{fig:figure1twostraintbm} we show the effect of case finding and 
 case holding controls. The combination of this strategies diminish the multi 
-drug resistant population. In \cref{tbl:parameters_MDR-TB_model} we compile the 
+drug resistant population. In \Cref{tbl:parameters_MDR-TB_model} we compile the 
 parameters description and values used to produce this figure and fix 
 $N = \num{30000}$, $\beta_3 = \num{0.29}$. To minimize the resistant TB 
 population, L2 + I2, the simulation suggest that the case holding strategy 
@@ -265,20 +265,24 @@ prevents  \num{3053} (= 4176 − 1123) cases of resistant TB.
   \centering
   \includegraphics{Figures/figure_1_two_strain_tbm}
   \caption{Normalized infected population according to the parameters in 
-  table [*]. Here the green line represents the infected population without 
-  control. As we see, case finding $u_1(t)$ and case holding $u_2(t)$, 
-  dramatically diminish the density of infected with resistant TB.}
+  \Cref{tbl:parameters_MDR-TB_model}. Here the green line represents the 
+  infected population without control. As we see, case finding $u_1(t)$
+  and case holding $u_2(t)$, dramatically diminish the
+  density of infected with resistant TB.}
   \label{fig:figure1twostraintbm}
 \end{figure}
 
 
-In figure [] we show the effect of the parameter $\beta_3$. As wee see the 
-simulation suggest that...
+In \cref{fig:figure2twostraintbm} we show the effect of the parameter 
+$\beta_3$. As wee see the simulation suggest that just delay the same profile for few
+months.
 
 \begin{figure}
   \centering
   \includegraphics{Figures/figure_2_two_strain_tbm}
-  \caption{}
+  \caption{Case finding and case holding under several $beta_3$ values.
+  Simulation suggest that case holding remains almost with the same profile, while
+  case finding delays same period for only for a few months.}
   \label{fig:figure2twostraintbm}
 \end{figure}
 
@@ -295,3 +299,4 @@ In figure we use different sizes of whole populations.
 
 
 
+ 
