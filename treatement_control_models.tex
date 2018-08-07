@@ -1,48 +1,9 @@
 \subsection{Two-strains Tuberculosis Model.}
 Seeking to reduce the latent and infectious groups with the 
 resistant-strain tuberculosis, in \cite{Lenhart2002} the authors  use 
-controls to represents two types of treatments in a tuberculosis model 
+control theory to describe optimal strategies in a tuberculosis model 
 which consider the effect of treatment in two kinds of strains. The 
 controlled version reads:
-%
-%	
-%	\begin{equation}\label{eqn:two_strain_TB}
-%	  \begin{aligned}
-%	    \frac{dS}{dt} &=
-%		    \Lambda - \beta_1 S \frac{I_1}{N} 
-%		    - \beta_3 S \frac{I_2}{N}
-%		    - \mu S
-%		  \\
-%		  \frac{L_1}{dt} &=
-%			  \beta_1 S \frac{I_1}{N}
-%			  - (\mu + k_1) L_1
-%			  +  p r_2 I_1
-%				+ \beta_2 T \frac{I_1}{N}
-%				- \beta_3 L_1 \frac{I_2}{N}
-%			\\
-%			\frac{I_1}{dt} &= 
-%				k_1 L_1
-%				- (\mu + d_1) I_1
-%				-r_2 I_1
-%			\\
-%			\frac{L_2}{dt} &=
-%				q r_2 I_1
-%				- (\mu + k_2) L_2
-%				+ \beta_3 (S + L_1 + T) \frac{I_2}{N}
-%			\\
-%			\frac{I_2}{dt} &=
-%				k_2 L_2 - (\mu + d_2) I_2
-%			\\
-%			\frac{d T}{dt} &=
-%				r_1 L_1
-%				+ (1 - (p + q)) r_2 I_1
-%				- \beta T \frac{I_1}{N}
-%				- \beta_3 T \frac{I_2}{N}
-%				-\mu T ~.
-%	  \end{aligned}
-%	\end{equation}
-%
-%
 	\begin{equation}\label{eqn:MDR-TB_model}
 	  \begin{aligned}
 	    \frac{dS}{dt} &=
@@ -82,17 +43,16 @@ controlled version reads:
 
 	\citeauthor*{Lenhart2002} consider time dependent 
 optimal control strategies associated with \emph{case holding} and 
-\emph{case finding}. They 
-incorporates the case finding control by adding a term which identifies and 
-cure a fraction o latent individuals. Case finding consequently reduces the 
-rate of disease development by latent individuals. The authors includes case 
-holding by adding a term which may decrease the treatment failure rate of 
-individuals with sensitive  TB, so, this control reduce the incidence of drug 
-resistant TB. In model \eqref{eqn:MDR-TB_model}, $u_1$ denotes the fraction of 
-typical TB latent individuals that is identified and will put under 
-treatment \textemdash case finding control \textemdash and $1 - u_2$ represents 
-the effort that prevents the failure treatment in typical TB infectious 
-individuals.
+\emph{case finding}. They incorporates the case finding control by adding a 
+term which identifies and  cure a fraction o latent individuals. Case finding
+consequently reduces the rate of disease development by latent individuals. The
+authors includes case holding by adding a term which may decrease the treatment
+failure rate of individuals with sensitive  TB, so, this control reduce the
+incidence of drug resistant TB. In model \eqref{eqn:MDR-TB_model}, $u_1$ denotes
+the fraction of typical TB latent individuals that is identified and will put
+under treatment \textemdash case finding control \textemdash and $1 - u_2$
+represents the effort that prevents the failure treatment in typical TB
+infectious individuals.
 
 	The controls $u_1$ ,$u_2$ reduce the latent and infected 
 groups with resistant TB. However, the case holding and the case finding 
@@ -247,9 +207,9 @@ to describe the regarding cost.
 \end{table}
 
 
-	In \cref{fig:figure1twostraintbm} we show the effect of case finding and 
+	\Cref{fig:figure1twostraintbm} shows the effect of case finding and 
 case holding controls. The combination of this strategies diminish the multi 
-drug resistant population. In \cref{tbl:parameters_MDR-TB_model} we compile the 
+drug resistant population. \Cref{tbl:parameters_MDR-TB_model} compiles the 
 parameters description and values used to produce this figure and fix 
 $N = \num{30000}$, $\beta_3 = \num{0.29}$. To minimize the resistant TB 
 population, L2 + I2, the simulation suggest that the case holding strategy 
@@ -264,32 +224,46 @@ prevents  \num{3053} (= 4176 − 1123) cases of resistant TB.
 \begin{figure}
   \centering
   \includegraphics{Figures/figure_1_two_strain_tbm}
-  \caption{Normalized infected population according to the parameters in 
-  table [*]. Here the green line represents the infected population without 
-  control. As we see, case finding $u_1(t)$ and case holding $u_2(t)$, 
-  dramatically diminish the density of infected with resistant TB.}
+  \caption{Normalized infected population according to parameters of 
+  \Cref{tbl:parameters_MDR-TB_model}. Here the green line represents the 
+  infected population without control. As we see, combining case finding 
+  $u_1(t)$ and  case holding $u_2(t)$, dramatically diminish the density of 
+  infected with resistant TB.}
   \label{fig:figure1twostraintbm}
 \end{figure}
 
-
-In figure [] we show the effect of the parameter $\beta_3$. As wee see the 
-simulation suggest that...
+According with \Cref{tbl:parameters_MDR-TB_model} and taking different values
+for the parameter $\beta_3$, in \Cref{fig:figure2twostraintbm} we illustrate 
+the effect of parameter $\beta_3$ over controls.The 
+simulation suggest that both controls experiment small variations just at the 
+beginning and reach almoss the same level after \SI{5}{year}.
 
 \begin{figure}
   \centering
   \includegraphics{Figures/figure_2_two_strain_tbm}
-  \caption{}
+  \caption{Top case finding and case holding controls 
+  under parameters encased in \Cref{tbl:parameters_MDR-TB_model} and
+  different values of parameter $\beta_3$. At bottom we capture a smaller
+  region to illustrate the variations regarding to case holding.
+  }
   \label{fig:figure2twostraintbm}
 \end{figure}
 
-In figure we use different sizes of whole populations.
+\Cref{fig:figure3twostraintbm} illustrates case finding and case holding 
+strategies under population of different sizes. The simulation suggest that
+under relative small population, is more important holds case finding at the 
+top. While for relatively bigger population the case holding is the more 
+important strategy.
 \begin{figure}
 \centering
 \includegraphics{Figures/figure_3_two_strain_tbm}
-  \caption{The effect of different size of populations. As we see for 
-  relatively small population, the case finding strategie is more importatn 
-  than case finding, meanwhile for relateviley big populations the case holding 
-  plays a more important role.}
+  \caption{
+    The effect of different size of populations. For 
+    relatively small population, the case finding strategy is more important 
+    than case finding, meanwhile for  bigger populations, the case holding 
+    plays a more important role. The rest of parameters as in 
+    \Cref{tbl:parameters_MDR-TB_model}.
+  }
   \label{fig:figure3twostraintbm}
 \end{figure}
 

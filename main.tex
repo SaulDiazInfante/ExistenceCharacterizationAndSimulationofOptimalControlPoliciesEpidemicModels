@@ -5,12 +5,11 @@
 \usepackage[T1]{fontenc}
 \usepackage[numbers]{natbib}
 \usepackage[a4paper,%
-			top=3cm,%
-			bottom=2cm,%
-			left=3cm,%
-			right=3cm,%
-			marginparwidth=1.75cm]{geometry}
-%% Useful packages
+      top=3cm,%
+      bottom=2cm,%
+      left=3cm,%
+      right=3cm,%
+      marginparwidth=1.75cm]{geometry}
 \usepackage{amsmath,amsthm,amssymb,amsfonts,enumerate}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
@@ -82,30 +81,29 @@ f^2_x\\
 f^2_x
 \end{bmatrix}\]
 
-	\section{Optimal control problems}
-		\input{Pontryagin}
-	\section{Classic epidemic models}
-	[Saúl]
-	\section{Control Policies in Epidemics}
-	[Saúl]
-    	\input{sec_control_epidemic_polices}
-      \section{Vaccination}
-      		\input{epidemic_model}
-	    	\input{vacination_control_models}
-	    \section{Treatment}
-	    	\input{treatement_control_models}
-	    	\input{hiv}
-	    \section{Quarantine and isolation}
-	    	\input{quarantine_cotrol_models}
-	    \section{Culling}
-	    	\input{culling_control_models.tex}
-	\section{Existence and characterization of optimal policies}
-		[David]
-	\section{Numerical analysis}
-		\input{numerical_methods}
-	\section{Concluding remarks}
-		[Everybody]
+  \section{Optimal control problems}
+    \input{Pontryagin}
+  \section{Classic epidemic models}
+  \section{Control Policies in Epidemics}
+  [Saúl]
+      \input{sec_control_epidemic_polices}
+      %\section{Vaccination}
+      %  \input{epidemic_model}
+      %  \input{vacination_control_models}
+      \section{Treatment}
+        \input{treatement_control_models}
+      % \input{hiv}
+      \section{Quarantine and isolation}
+        \input{quarantine_cotrol_models}
+      \section{Culling}
+        \input{culling_control_models.tex}
+  \section{Existence and characterization of optimal policies}
+    [David]
+  \section{Numerical analysis}
+    \input{numerical_methods}
+  \section{Concluding remarks}
+    [Everybody]
 %
-	\bibliographystyle{plainnat}
-	\bibliography{references,OptimalControl-ContinuousControledEpidemicModels}
+  \bibliographystyle{plainnat}
+  \bibliography{references,OptimalControl-ContinuousControledEpidemicModels}
 \end{document}
