@@ -67,7 +67,7 @@ strategies produces a economic fee. In \cite{Lenhart2002} the authors use
 			 \right]dt,
 \end{equation}
 to describe the regarding cost.
-\begin{table}
+\begin{table}[b]
 	\centering
 	\begin{tabular}{rll}
 		\toprule
@@ -207,9 +207,15 @@ to describe the regarding cost.
 \end{table}
 
 
+<<<<<<< HEAD
 	\Cref{fig:figure1twostraintbm} shows the effect of case finding and 
 case holding controls. The combination of this strategies diminish the multi 
 drug resistant population. \Cref{tbl:parameters_MDR-TB_model} compiles the 
+=======
+	In \Cref{fig:figure1twostraintbm} we show the effect of case finding and 
+case holding controls. The combination of this strategies diminish the multi 
+drug resistant population. In \Cref{tbl:parameters_MDR-TB_model} we compile the 
+>>>>>>> e280e51d7be3d1e25dea4a2aca10d41974407b9a
 parameters description and values used to produce this figure and fix 
 $N = \num{30000}$, $\beta_3 = \num{0.29}$. To minimize the resistant TB 
 population, L2 + I2, the simulation suggest that the case holding strategy 
@@ -224,6 +230,7 @@ prevents  \num{3053} (= 4176 − 1123) cases of resistant TB.
 \begin{figure}
   \centering
   \includegraphics{Figures/figure_1_two_strain_tbm}
+<<<<<<< HEAD
   \caption{Normalized infected population according to parameters of 
   \Cref{tbl:parameters_MDR-TB_model}. Here the green line represents the 
   infected population without control. As we see, combining case finding 
@@ -237,15 +244,35 @@ for the parameter $\beta_3$, in \Cref{fig:figure2twostraintbm} we illustrate
 the effect of parameter $\beta_3$ over controls.The 
 simulation suggest that both controls experiment small variations just at the 
 beginning and reach almoss the same level after \SI{5}{year}.
+=======
+  \caption{Normalized infected population according to the parameters in 
+  \Cref{tbl:parameters_MDR-TB_model}. Here the green line represents the 
+  infected population without control. As we see, case finding $u_1(t)$
+  and case holding $u_2(t)$, dramatically diminish the
+  density of infected with resistant TB.}
+  \label{fig:figure1twostraintbm}
+\end{figure}
+
+
+In \cref{fig:figure2twostraintbm} we show the effect of the parameter 
+$\beta_3$. As wee see the simulation suggest that just delay the same profile for few
+months.
+>>>>>>> e280e51d7be3d1e25dea4a2aca10d41974407b9a
 
 \begin{figure}
   \centering
   \includegraphics{Figures/figure_2_two_strain_tbm}
+<<<<<<< HEAD
   \caption{Top case finding and case holding controls 
   under parameters encased in \Cref{tbl:parameters_MDR-TB_model} and
   different values of parameter $\beta_3$. At bottom we capture a smaller
   region to illustrate the variations regarding to case holding.
   }
+=======
+  \caption{Case finding and case holding under several $beta_3$ values.
+  Simulation suggest that case holding remains almost with the same profile, while
+  case finding delays same period for only for a few months.}
+>>>>>>> e280e51d7be3d1e25dea4a2aca10d41974407b9a
   \label{fig:figure2twostraintbm}
 \end{figure}
 
@@ -269,3 +296,4 @@ important strategy.
 
 
 
+ 
