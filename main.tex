@@ -1,5 +1,4 @@
-\documentclass[titlepage]{amsart}
-\usepackage[foot]{amsaddr}
+\documentclass[a4paper]{amsart}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
@@ -59,34 +58,18 @@
 }
 %
 %
-\author[D\'iaz-Infante]{Saul D\'iaz-Infante} 
-\address[D\'iaz-Infante, Gonz\'allelez-S\'anchez]{%
-  Departamento de Matemáticas, CONACYT-Universalized de Sonora, 
-  Hermosillo, Sonora, M\'exico.
-}
-\email{sdinfante@conacyt.mx}
-
-\author[Pe\~u\~nuri]{Francisco Pe\~u\~nuri}
-\address{Departamento de Ingeniería Física, 
-  Universidad Autónoma de Yucatán,
-   Merida, Yucatán, México}
-\email{francisco.pa@correo.uady.mx}
-
-\author[Gonz\'alez-S\'anchez]{David Gonz\'alez-S\'anchez}
-%\address{Departamento de Matemáticas, CONACYT-Universidad de Sonora}
-\email{dgonzalezsa@conacyt.mx}
+\author{Saul, Frank, David}
 %
 \begin{document}
+	\maketitle
   \begin{abstract}
   	Your abstract.
   \end{abstract}
-  \maketitle
 %
 %
   \section{Introduction}
     \input{introduction}
-  \section{Optimal control problems}
-    \input{Pontryagin}
+  
   \section{Classic epidemic models}
     \input{sec_intro_epidemics}
   \section{Control Policies in Epidemics}
@@ -102,12 +85,22 @@
     \input{quarantine_cotrol_models}
   \section{Culling}
     \input{culling_control_models.tex}
+ 
+ 
   \section{Existence and characterization of optimal policies}
+ \input{TheoreticalResults}
+ 
+ 
   \section{Numerical analysis}
     \input{numerical_methods}
+ 
   \section{Concluding remarks}
+
+\section{Appendix: Deterministic OCPs in continuous time}
+    \input{Pontryagin}
 %
 %
+
   \bibliographystyle{plainnat}
   \bibliography{references,OptimalControl-ContinuousControledEpidemicModels}
 \end{document}
