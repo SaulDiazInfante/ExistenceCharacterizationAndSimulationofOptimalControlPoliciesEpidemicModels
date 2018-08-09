@@ -1,73 +1,9 @@
 %We follow Cesari \cite{Cesari83} and Yong \cite{Yong2015} for OCPs. We assume some knowledge on ODEs \cite{Teschl} and real analysis \cite{Loeb2016}.
 
-\subsection*{Notation} Each element $x$ in $\R^n$ is written as a column vector 
-and 
-$x^\top$ denotes the transpose. We write the gradient of $g:\R^n\to\R$ as a row 
-vector 
-    \[ g_x =(\partial g/\partial x_1,\ldots, \partial g/\partial x_n). \]
-If $\lambda:\R\to\R^n$ is differentiable, the derivative is denoted 
-$\dot{\lambda}=(d\lambda^1/dt,\ldots,d\lambda^n/dt)^\top$. The Jacobian matrix 
-of $f=(f^1,\ldots,f^n)^\top:\R^n\to\R^n$ is   
-\[f_x=
-  \begin{bmatrix}
-    f^1_x\\
-    f^2_x\\
-    \vdots \\
-    f^2_x
-  \end{bmatrix}
- \]
 
-\subsection{Deterministic OCPs in continuous time}
 
-Let $\mathbf{X}\s\R^n$ and $\mathbf{U}\s \R^m$ be nonempty sets. The sets $\mathbf{X}$ and $\mathbf{U}$ are 
-respectively called the {\it state space} and the {\it control space}. Consider 
-the following {\it control system}
-\begin{equation}\label{CoDiffEq}
-\dot{X}(t)=f(t,X(t),u(t)), \quad X(0)=x_0,
-\end{equation}
-where $f:[0,T]\times \mathbf{X}\times \mathbf{U}\to \R^n$ and $u:[0,T]\to U$. 
-%In order to guarantee the existence of a solution $x$ to \eqref{CoDiffEq}, 
-%we need the following.
-
-\begin{assumption}\label{Assum1}\rm  The function $f:[0,T]\times \mathbf{X}\times \mathbf{U}\to \R^n$
-is measurable and there exists a constant $L>0$ such that
-\begin{eqnarray}
-  \|f(t,x,u)-f(t,x_1,u)\| & \leq & L\|x-x_1\|\label{LipfInx}\\
-  \|f(t,0,u)\| & \leq & L\label{fBound}
-\end{eqnarray}
-for every $x,x_1\in \mathbf{X}$, $t\in[0,T]$, and $u\in \mathbf{U}$.
-\end{assumption}
-
-%A proof of the following result can be found, for instance, in Yong \cite[Sect. 2.1]{Yong2015}. 
-
-\begin{theorem}\label{ExAdmisPair} 
-	Under Assumption \ref{Assum1}, for each measurable function 
-	$u:[0,T]\to \mathbf{U}$, there exists a unique absolutely continuous function $X_u$ that satisfies the the system 
-	\eqref{CoDiffEq} almost everywhere. %The solution $x_u$ satisfies	\begin{equation}\label{ineqSol} 
-	%	|x_u(t)|\leq e^{Lt}(1+|x_0|) -1,\qquad t\in [0,T].	\end{equation}
-\end{theorem}
-\begin{proof} Let $u:[0,T]\to U$ be a measurable function. Consider the linear space 
-    \[\mathbb{X}=\{X:[0,T]\to \R^n\mid X \mbox{ is continuous}\}\] 
-with the norm
-    \[ \|X\|_w:=\sup_{t\in[0,T]} \frac{\|X(t)\|}{w(t)}, \]
-where $w(t):=e^{Lt}$ for each $t\in [0,T]$. It can be shown, with slight modifications in \cite[Section 2.1]{Teschl}, that the pair $(\mathbb{X},\|\cdot\|_w)$ is a Banach space. Define the operator $K:\mathbb{X}\to \mathbb{X}$ by 
-    \[ K[X](t):=x_0 + \int_0^t f(s,X(s),u(s))ds.\]
-By \eqref{LipfInx} and \eqref{fBound}, any $(t,x,u)$ satisfies 
-  \begin{equation}
-      \|f(t,x,u)\| \leq  L(1+\|x\|),
-  \end{equation}
-thus $f(\cdot,X(\cdot),u(\cdot))$ is Lebesgue integrable and $K[X]$ is absolutely continuous. We claim that $K$ is a contraction with contraction constant $1-e^{-LT}$. Indeed,
-    \begin{eqnarray*}
-    \| K[X] - K[Y] \|_w & = & \sup_{t\in[0,T]} \frac{|\int_0^t [f(s,X(s),u(s)) -f(s,Y(s),u(s))]ds|}{w(t)}\\
-        & \leq &   \sup_{t\in[0,T]} \frac{L\int_0^t w(s)[w(s)]^{-1}|X(s) -Y(s)|ds}{w(t)}\\
-        &\leq &  L\|X-Y\|_w \sup_{t\in[0,T]} \frac{\int_0^t w(s)ds}{w(t)}\\
-        & = &  L\|X-Y\|_w \sup_{t\in[0,T]}\frac{[e^{Lt}-1]/L}{e^{Lt}}\\
-        & = &  (1-e^{-LT})\|X-Y\|_w. 
-    \end{eqnarray*}
-Then by Banach's fixed point theorem \cite[Theorem 2.1]{Teschl}, there exists a unique $X\in \mathbb{X}$ satisfying 
-    \[ X(t)=x_0 + \int_0^t f(s,X(s),u(s))ds.\]
-Therefore \eqref{CoDiffEq} holds almost everywhere \cite[Corollary 5.4.1]{Loeb2016}.
-\end{proof}
+%\subsection{Deterministic OCPs in continuous time}
+In this appendix we 
 
 
 	Given a measurable function $u$ and the solution $X_u(\cdot)$ to 
