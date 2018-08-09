@@ -1,4 +1,5 @@
-\documentclass[a4paper]{amsart}
+\documentclass[titlepage]{amsart}
+\usepackage[foot]{amsaddr}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
@@ -58,13 +59,28 @@
 }
 %
 %
-\author{Saul, Frank, David}
+\author[D\'iaz-Infante]{Saul D\'iaz-Infante} 
+\address[D\'iaz-Infante, Gonz\'alez-S\'anchez]{%
+  Departamento de Matemáticas, CONACYT-Universidad de Sonora, 
+  Hermosillo, Sonora, México.
+}
+\email{sdinfante@conacyt.mx}
+
+\author[Pe\~u\~nuri]{Francisco Pe\~u\~nuri}
+\address{Departamento de Ingeniería Física, 
+  Universidad Autónoma de Yucatán,
+   Merida, Yucatán, México}
+\email{francisco.pa@correo.uady.mx}
+
+\author[Gonz\'alez-S\'anchez]{David Gonz\'alez-S\'anchez}
+%\address{Departamento de Matemáticas, CONACYT-Universidad de Sonora}
+\email{dgonzalezsa@conacyt.mx}
 %
 \begin{document}
-	\maketitle
   \begin{abstract}
   	Your abstract.
   \end{abstract}
+  \maketitle
 %
 %
   \section{Introduction}
