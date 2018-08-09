@@ -69,38 +69,44 @@
 %
   \section{Introduction}
     \input{introduction}
-  
   \section{Classic epidemic models}
     \input{sec_intro_epidemics}
   \section{Control Policies in Epidemics}
     \input{sec_control_epidemic_polices}
-  \section{Vaccination}
-    \input{epidemic_model}
-  %  \input{vacination_control_models}
-  \section{Treatment}
-    \input{hiv}
-  \section{Case Finding and Case Control}
-    \input{treatement_control_models}
-  \section{Isolation and Quarantine}
-    \input{quarantine_cotrol_models}
-  \section{Culling}
-    \input{culling_control_models.tex}
- 
- 
+    \subsection{Vaccination}
+      \input{epidemic_model}
+    %  \input{vacination_control_models}
+    %\subsection{Treatment}
+    %  \input{hiv}
+    \subsubsection{Case Finding and Case Control}
+      \input{treatement_control_models}
+    \subsection{Isolation and Quarantine}
+      \input{quarantine_cotrol_models}
+    \section{Culling}
+      \input{culling_control_models.tex}
   \section{Existence and characterization of optimal policies}
- \input{TheoreticalResults}
- 
- 
+    \input{TheoreticalResults}
+%
+%
   \section{Numerical analysis}
     \input{numerical_methods}
- 
+  \section{Numerical experiments}
+    \subsection*{Vaccination}
+      \input{epidemic_model_ne}
+    \subsubsection*{Case Finding and Case Control}
+      \input{treatement_control_models_ne}
+    \subsection*{Isolation and Quarantine}
+      \input{quarantine_cotrol_models_ne}
+    \section{Culling}
+      \input{culling_control_models_ne}
+%
+%
   \section{Concluding remarks}
-
+%
 \section{Appendix: Deterministic OCPs in continuous time}
     \input{Pontryagin}
 %
 %
-
   \bibliographystyle{plainnat}
   \bibliography{references,OptimalControl-ContinuousControledEpidemicModels}
 \end{document}

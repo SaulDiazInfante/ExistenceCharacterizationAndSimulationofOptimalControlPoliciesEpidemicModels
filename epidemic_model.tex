@@ -38,54 +38,34 @@ Hence, the optimal control problem reads\em parameters in
 
 \begin{table}[htb]
   \begin{center}
-    \begin{tabular}{rll}
+    \begin{tabular}{rl}
       \toprule
         & \multicolumn{1}{c}{\textbf{Description}} 
-        & \textbf{Simulation values}
         \\
       \midrule
         $b$
           & Recruitment rate
-          & \num{0.525}
         \\
         $a$, $d$ 
           & Disease and natural death rates
-          & \num{0.2}, \num{0.5}
         \\
         $c$
           & Incidence of disease
-          & \num{0.0001}
         \\
         $e$
           & Rate at which the exposed 
-          & \num{0.5}
           \\
           & individuals become infectious
         \\
         $g$
           & Recovering rate
-          & \num{0.1}
         \\
         $A$
           & Vaccination cost
-          & \num{0.1}
         \\
         $T$
           & Final time
-          & \num{20.0}
         \\
-        \\
-        && 
-        \multicolumn{1}{c}{
-          \textbf{Initial conditions}
-        }
-        \\
-        \cmidrule{3-3}
-          &&
-            $S(0) = \num{1000}$, $E(0) = \num{100}$
-          \\
-          &&
-            $I(0) = \num{50}$, $R(0) = \num{15}$
         \\
       \bottomrule
     \end{tabular}
@@ -94,45 +74,3 @@ Hence, the optimal control problem reads\em parameters in
     \label{tbl:epidemics_lenhart}
   \end{center}
 \end{table}
-
- Note that the disease free state is 
-$(bN/d,0,0,0)$.
-
-The Hamiltonian for this problem is
-\begin{align*}
-    H(t,x,u,\lambda) &= AI + u^{2} + \left< \lambda , g \right> \\
-                     &= AI + u^{2} + \sum_{i \in J} \lambda_{i}g_{i}
-\end{align*}
-where $J = \{S, E, I, R\}$ and $g_i$ is the right hand side of the corresponding
-equation.
-
-%---------%---------%---------%---------%---------%---------%---------%---------
-\begin{theorem} 
-    There exists an optimal control $u^{*}$ and corresponding solutions, \break
-    $S^{*}, E^{*}, I^{*}, T^{*}, N^{*}$ that maximizes $J(u)$ over $[0, 1]$. 
-    Also, there exists adjoint functions, $\lambda_{i}, i \in J$, such that
-    \begin{align*}
-         \dot{\lambda}_{S} &=
-            \lambda_{S}\left(d + cI + u \right) - \lambda_{E}cI - 
-            \lambda_{R}u   \\
-        \dot{\lambda}_{E} &=
-            \lambda_{E}(e + d) - \lambda_{I}e  \\
-        \dot{\lambda}_{I} &=
-            (\lambda_{S} - \lambda_{E})cS + \lambda_{I}(g + a +d) - \lambda_{R}g
-            \lambda_{N}a\\
-        \dot{\lambda}_{R} &=    \lambda_{R}d  \\
-        \dot{\lambda}_{N} &=
-            - \lambda b - \lambda_{R}d  (b - d)
-    \end{align*}
-\end{theorem}
-
-\begin{figure}[tbh!]
-\centering
-	\includegraphics{./Figures/epidemics_lenhart_lab7}
-	\caption{Likening between the controlled and uncontrolled Infected 
-	 population.  At right, we show the optimal infected state agains the 
-	 dynamics without 
-	 control. At right we present the corresponding adjoint function $\lambda$ 
-	 and the optimal control.}
-\label{fig:epidemicslenhartlab7}
-\end{figure}
