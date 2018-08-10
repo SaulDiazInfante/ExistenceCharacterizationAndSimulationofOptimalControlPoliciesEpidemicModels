@@ -1,88 +1,57 @@
 \begin{table}[htb]
     \begin{center}
-      \begin{tabular}{@{}rll@{}}
+      \begin{tabular}{@{}rlrl@{}}
         \toprule
-        & \multicolumn{1}{l}{\bf{Description}}
-        & \multicolumn{1}{l}{\bf{Simulation values}}
+        \multicolumn{4}{c}{\bf{Parameters values}}
         \\
         \midrule
         $\beta$
-          & Transmission coefficient
           & \num{0.2}
+          & $d_1$, $d_2$
+          & \num{0.0079}, \num{0.0337}
         \\
         $\varepsilon_E$, 
         $\varepsilon_Q$,
         $\varepsilon_J$
-          & Modification parameter for 
           & \num{0.3}, \num{0.0}, \num{0.1}
-          \\
-          &  exposed, quarantine and isolation classes 
+          &
+          $k_1$, $k_2$ 
+          & 
+            \num{0.1},
+            \num{0.125}
           \\
         $\mu$
-          & Natural death rate.
           & \num{0.000034}
         \\
         $\Lambda$
-          & Constant recruitment rate
           & $\mu N$
         \\
         $p$
-          & Net inflow of asymptomatic individuals
           & \num{0.0}
         \\
-        $k_1$ 
-          & Transfer rate from class 
-          & \num{0.1}
-          \\
-          & of asymptomatic to symptomatic
-          \\
-        $k_2$
-          & Transfer rate from the quarantine 
-          & \num{0.125}
-          \\ 
-          & class to isolation
-        \\
-        \\
-        $d_1$, $d_2$
-          & Per-capita disease induced death rates 
-          & \num{0.0079}, \num{0.0337}
-          \\
-          & for the symptomatic individuals and 
-          \\
-          & isolated individuals.
-        \\
         $\sigma_1$, $\sigma_2$
-          & Per-capita recovery rates for the 
           & \num{0.0337}, \num{0.0386}
-          \\
-          & symptomatic individuals and 
-          \\
-          &  isolated individuals
+          && \multicolumn{1}{c}{\bf{Initial conditions}}
         \\
-        \\
+        \cmidrule{4-4}
+          &&& $S(0)=\num{12e6}$, $E(0)=1565$,
+         \\
         $t_f$
-          & Final time 
           & $\SI{1.0}{year}$
-        \\
-        $dt$
-          & Numerical integration step size
-          & \SI{1.0}{day}
-        \\
-          & Lower and upper bounds for $u_1$
-          & \num{.05}, \num{0.5}
-        \\
-          & Lower and upper bounds for $u_2$
-          & \num{.05}, \num{0.5}
-        \\
-        \\
-         && \multicolumn{1}{c}{\bf{Initial conditions}}
-        \\
-         \cmidrule{3-3}
-         && $S(0)=\num{12e6}$, $E(0)=1565$,
-         \\
           && $Q(0)=292$, $I(0)=\num{695}$,
-         \\
-         && $J(0)=\num{326}$, $R(0)=\num{20}$
+        \\
+        Step size
+        & $dt=\SI{1.0}{day}$
+        && $J(0)=\num{326}$, $R(0)=\num{20}$
+        \\
+        $u_i$ bounds
+          & \num{.05}, \num{0.5}
+        \\
+        $B_1$, $B_2$, $B_3$, $B_4$
+        & \num{1.0}, \num{1.0}, \num{1.0}, \num{1.0}
+        \\
+        $C_1$, $C_2$
+        & \num{300}, \num{600}
         \\
         \bottomrule
       \end{tabular}
