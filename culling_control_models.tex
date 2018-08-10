@@ -3,7 +3,7 @@ Here we present the model reported in \cite*{Bolzoni2014} to describe a
 outbreak of badger bovine tuberculosis. The regarding 
 uncontrolled model reads
 
-\begin{equation}
+\begin{equation}\label{eqn:culling}
 	\begin{aligned}
   \min_{u(t)\in \mathcal{U}}
     &
@@ -24,6 +24,12 @@ uncontrolled model reads
 	\end{aligned}
 \end{equation}
 %
+Here the susceptible follow a logistic growth with net grow rate
+$r= \nu - \mu$ and carrying capacity $K$. According with the approach, 
+of \citet{VandenDriessche2017}, the regarding reproductive number results
+$$
+  R_0 = \frac{\beta K}{\alpha + \mu}
+$$ 
 \begin{table}
   \begin{center}
     \begin{tabular}{@{}rl@{}}
@@ -31,6 +37,10 @@ uncontrolled model reads
       \multicolumn{2}{c}{\bf{Description}}
       \\
       \midrule
+      $\nu$
+        &
+          Natural fertility rate
+      \\
       $\mu$
         & Natural mortality rate
       \\
@@ -53,4 +63,6 @@ uncontrolled model reads
       \bottomrule
     \end{tabular}
   \end{center}
+  \caption{Parameter description of the control model \eqref{eqn:culling}.}
+  \label{tbl:culling_parameter_des}
 \end{table}
