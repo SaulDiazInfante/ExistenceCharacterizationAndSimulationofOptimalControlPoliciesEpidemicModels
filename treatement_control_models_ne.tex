@@ -1,4 +1,4 @@
-\begin{table}[b]
+\begin{table}[H]
 	\centering
 	\begin{tabular}{rlrlll}
 		\toprule
@@ -117,8 +117,14 @@ infected resistant TB $L2 + I2$  at the final time $t_f = \SI{5}{years}$ results
 \num{1123}. This same number but without control sums 4176. So this policies 
 prevents \SI{3053}{cases} of resistant TB.
 
-
-\begin{figure}
+  According with \Cref{tbl:parameters_MDR-TB_model} and taking different values
+for the parameter $\beta_3$, in \Cref{fig:figure2twostraintbm} we illustrate 
+the effect of parameter $\beta_3$ over controls.The 
+simulation suggest that both controls experiment small variations just at the 
+beginning and reach almost the same level after \SI{5}{year}. As wee see the 
+simulation suggest that just delay the same profile for few months.
+%
+\begin{figure}[H]
   \centering
   \includegraphics{Figures/figure_1_two_strain_tbm}
   \caption{Normalized infected population according to parameters of 
@@ -129,14 +135,8 @@ prevents \SI{3053}{cases} of resistant TB.
   \label{fig:figure1twostraintbm}
 \end{figure}
 
-According with \Cref{tbl:parameters_MDR-TB_model} and taking different values
-for the parameter $\beta_3$, in \Cref{fig:figure2twostraintbm} we illustrate 
-the effect of parameter $\beta_3$ over controls.The 
-simulation suggest that both controls experiment small variations just at the 
-beginning and reach almost the same level after \SI{5}{year}. As wee see the 
-simulation suggest that just delay the same profile for few months.
 %
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics{Figures/figure_2_two_strain_tbm}
   \caption{
@@ -155,7 +155,7 @@ strategies under population of different sizes. The simulation suggest that
 under relative small population, is more important holds case finding at the 
 top. While for relatively bigger population the case holding is the more 
 important strategy.
-\begin{figure}
+\begin{figure}[H]
   \centering
   \includegraphics{Figures/figure_3_two_strain_tbm}
   \caption{

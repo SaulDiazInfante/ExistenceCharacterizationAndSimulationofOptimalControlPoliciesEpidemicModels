@@ -1,4 +1,4 @@
-\documentclass[a4paper]{amsart}
+\documentclass[titlepage]{amsart}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
@@ -18,6 +18,8 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{siunitx}
 \usepackage{cleveref}
+\usepackage[foot]{amsaddr}
+\usepackage{float}
 \usepackage[section]{placeins}
 %
 \newtheorem{theorem}{Theorem}
@@ -58,7 +60,24 @@
 }
 %
 %
-\author{Saul, Frank, David}
+\author[S. D\'iaz-Infante]{Saul D\'iaz-Infante}
+\email{sdinfante@conacyt.mx} 
+\author[F. Pe\~nu\~nuri]{Francisco Pe\~nu\~nuri}
+\email{francisco.pa@correo.uady.mx}
+\author[D. Gonz\'alez-S\'anchez]{David Gonz\'alez-S\'anchez}
+\email{dgonzalezsa@conacyt.mx}
+%
+\address[S. D\'iaz-Infante, D. Gonz\'alez-S\'anchez]{
+  Departamento de Matem\'aticas, 
+  CONACYT-Universidad de Sonora,
+  Hermosillo, Sonora.
+}
+\address[F. Pe\~nu\~nuri]{%
+  Departamento de Ingenier\'ia F\'isica,
+  Universidad Autónoma de Yucat\'an, 
+  Merida Yucat\'an
+}
+
 %
 \begin{document}
 	\maketitle
@@ -78,11 +97,11 @@
     %  \input{vacination_control_models}
     %\subsection{Treatment}
     %  \input{hiv}
-    \subsubsection{Case Finding and Case Control}
+    \subsection{Case Finding and Case Control}
       \input{treatement_control_models}
     \subsection{Isolation and Quarantine}
       \input{quarantine_cotrol_models}
-    \section{Culling}
+    \subsection{Culling}
       \input{culling_control_models.tex}
   \section{Existence and characterization of optimal policies}
     \input{TheoreticalResults}
@@ -91,13 +110,13 @@
   \section{Numerical analysis}
     \input{numerical_methods}
   \section{Numerical experiments}
-    \subsection*{Vaccination}
+    \subsection{Vaccination}
       \input{epidemic_model_ne}
-    \subsubsection*{Case Finding and Case Control}
+    \subsection{Case Finding and Case Control}
       \input{treatement_control_models_ne}
-    \subsection*{Isolation and Quarantine}
+    \subsection{Isolation and Quarantine}
       \input{quarantine_cotrol_models_ne}
-    \section{Culling}
+    \subsection{Culling}
       \input{culling_control_models_ne}
 %
 %
