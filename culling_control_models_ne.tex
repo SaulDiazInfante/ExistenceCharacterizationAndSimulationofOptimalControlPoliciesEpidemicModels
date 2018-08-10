@@ -1,3 +1,52 @@
+\begin{table}
+  \begin{center}
+    \begin{tabular}{@{}rllc@{}}
+      \toprule
+      \multicolumn{2}{c}{\textbf{Parameters values}}
+      &&
+      \textbf{Initial Conditions}
+      \\
+      \cmidrule{1-2}
+      \cmidrule{4-4}
+      $\mu$
+        & \num{0.6}
+        &&  
+          $S(0) = K$, 
+          $I(0) = 1$
+      \\
+      $K$
+        & \num{0.4}
+      \\
+      $\alpha$
+        & \num{0.05}
+      \\
+      $R_0$
+        & \num{2.0}
+        && 
+          \textbf{Control bound}
+      \\
+      \cmidrule{4-4}
+      $\beta$
+        &
+         $
+          \displaystyle
+          \frac{R_0(\alpha + \mu)}{K}
+         $
+        &&
+          $u_{max} = \num{0.1}$
+      \\
+      $P$
+        & \num{40.0}
+      \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
+
+
+
 \begin{figure}[h]
   \centering
   \includegraphics{Figures/figure_1_culling}
