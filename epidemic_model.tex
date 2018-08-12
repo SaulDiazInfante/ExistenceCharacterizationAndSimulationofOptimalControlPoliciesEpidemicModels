@@ -1,22 +1,30 @@
-  Here we consider a standard epidemic model to describe the dynamics of a 
-disease. We use optimal control techniques to find a vaccination
-schedule for the disease. Goal is to minimize the number of infectious 
-persons and the overall cost of the vaccine during a fixed time period. 
-
-  Here $S(t)$,$I(t)$,$R(t)$ respectively denote the number of susceptible 
-infectious, and recovered (immune) individuals at time $t$. The model also 
-consider a class that represent the number of exposed $E(t)$. 
-Then the whole population $N$ is given by $N(t) = S(t) + E(t) + I(t) + R (t)$,
-and obeys the last equation of model \eqref{eqn:epidemics_lenhart}.
-
-The control $u(t)$ is a fraction of susceptible individual being 
-vaccinated per unit of time. Since vaccination of the entire susceptible 
-population is impractical, the model considers $0 \leq u(t) \leq 0.9$. 
-
-Hence, the optimal control problem reads\em parameters in 
-\Cref{tbl:epidemics_lenhart_des}.
-
-
+Due to the limited resources associated with vaccination programs, is imperative
+to optimize the use of available resources. Using optimal control theory, we
+formulate a vaccination schedule. The goal is to minimize the number of infected
+persons and the cost of vaccine during a fixed time, to this example, we 
+optimize the functional
+$$
+  J(u):= 
+  \int_{0}^{T}
+    A I(t) + u^2(t) .
+$$
+Here $u$ is the vaccination control and denotes the fraction of
+susceptible individuals to vaccinate per unit of time. Since manage infected 
+population imply resource consume, $A$ means the regarding cost per individual.
+We also need a spreads dynamics. So, let $S(t)$, $E(t)$, $I(t)$, $R(t)$
+respectively be the number of susceptible, exposed, infectious, and recovered
+(immune) individuals at time $t$. Since vaccination of
+the entire susceptible population is impractical, the model considers 
+$0 \leq u(t) \leq 0.9$. Then the whole population $N$ is given by 
+$N(t) = S(t) + E(t) + I(t) + R (t)$, and obeys
+$
+  \dot{N}(t) =
+    (b - d)N(t) - aI(t).
+$
+Since $b$ is the recruitment rate and $d$ natural death, the term $b-d$ denotes 
+the growth of the entire population. Then, the optimal control problem reads
+%
+%
 \begin{equation} \label{eqn:epidemics_lenhart}
   \begin{aligned}
     \min_{u} & \int_{0}^{T} AI(t) + u^{2}(t) dt,
@@ -31,10 +39,11 @@ Hence, the optimal control problem reads\em parameters in
           eE(t) - (g + a +d)I(t), \quad I(0) = I_0 \geq 0,     \\
       \dot{R}(t) &=
           gI(t) -dR(t) + u(t)S(t), \quad R(0) = R_0 \geq 0,    \\
-      \dot{N}(t) &=
-          (b - d)N(t) - aI(t), \quad N(0) = N_0 \geq 0,        \\
+        \dot{N}(t) &=
+          (b - d)N(t) - aI(t), \quad N(0)= S_0 + E_0 + I_0 + R_0, 
   \end{aligned}
 \end{equation}
+see \Cref{tbl:epidemics_lenhart_des} for a parameters description.
 
 \begin{table}[H]
   \begin{center}
@@ -74,3 +83,4 @@ Hence, the optimal control problem reads\em parameters in
     \label{tbl:epidemics_lenhart_des}
   \end{center}
 \end{table}
+%
