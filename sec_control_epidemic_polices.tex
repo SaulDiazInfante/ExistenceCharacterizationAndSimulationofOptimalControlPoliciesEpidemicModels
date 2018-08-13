@@ -1,11 +1,26 @@
 %Here the main reference is the book of Lenhart \cite{Lenhart2002}.
 
 \paragraph{Introduction.} 
+Here we presented several control models that under our criteria are good 
+examples. Before talking about this good examples, we give the core of optimal 
+policy modeling.
 
+First, we require a model to describe the spreading of an uncontrolled disease,
+and whose transitions generate a cost. Then, we add a continuous control action
+to modify the changes from one state to another but such that we optimize the
+mentioned cost. A rule which prescribes which control operation to use at each
+time is a control policy. A control policy which applies only information from
+the current state of the controlled system to prescribe control actions is a
+closed-loop or feedback control. If the current state is not observable, or the
+control function only depends on the time we have an open-loop policy: the sort
+of policies that we consider in this work.
 
-\paragraph{What means a optimal control policy in this context?}
-
-\paragraph{The cost function and its interpretation in epidemic control models.}
+Here, we consider control policies that affect the bounded rates at which
+population moves from one class (e.g., infected) to another (e.g., recovered).
+In all these problems, the control function appears linearly in the relevant
+dynamic. Next, we specify a cost functional which assigns the total cost of the
+control policy implementation. Then the problem is to determine a policy that
+optimizes the regarding cost strategy.
 
 \paragraph{Comments about recent bibliography.}
 
