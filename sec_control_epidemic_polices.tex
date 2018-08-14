@@ -1,7 +1,7 @@
 %Here the main reference is the book of Lenhart \cite{Lenhart2002}.
 
 \paragraph{Introduction.} 
-Here we presented several control models that under our criteria are good 
+Here we presented several control models that we consider as good 
 examples. Before talking about this good examples, we give the core of optimal 
 policy modeling.
 
@@ -15,13 +15,34 @@ closed-loop or feedback control. If the current state is not observable, or the
 control function only depends on the time we have an open-loop policy: the sort
 of policies that we consider in this work.
 
-Here, we consider control policies that affect the bounded rates at which
+  Here, we consider control policies that affect the bounded rates at which
 population moves from one class (e.g., infected) to another (e.g., recovered).
 In all these problems, the control function appears linearly in the relevant
 dynamic. Next, we specify a cost functional which assigns the total cost of the
 control policy implementation. Then the problem is to determine a policy that
 optimizes the regarding cost strategy.
 
+  A common practice to solve this kind of problems follows the next steps:
+  \begin{enumerate}[(a)]
+    \item
+      Prove that exist an optimal policy.
+    \item 
+      Find and use necessary condition for the optimality of a policiy.
+      Following sections provide a technique to transform a given optimization
+      problem into solve a ordinary differential equation with boundary values.
+    \item 
+      From the necessary conditions, determine important qualities of the 
+      optimal policies, for example, the boundedness of controls.
+    \item 
+      Usually this kind of problems are non linear, then find solution is 
+      extremely difficult. Therefore, choose a convenient numerical scheme is
+      very important. In this work we implements the forward-backward-sweep 
+      method.
+  \end{enumerate}
 \paragraph{Comments about recent bibliography.}
 
 \paragraph{Usual control policies.}
+  \subparagraph{Vaccination}
+  \subparagraph{Case finding and case holding}
+  \subparagraph{Isolation and quarantine}
+  \subparagraph{Culling}
