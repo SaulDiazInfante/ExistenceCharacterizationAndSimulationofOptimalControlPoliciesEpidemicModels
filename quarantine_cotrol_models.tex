@@ -1,10 +1,18 @@
 
 \subsection*{SARS}
-\citeauthor{Yan2008} report in \cite{Yan2008} a epidemic model for
-Severe acute respiratory syndrome (SARS). They use quarantine and 
-isolation as mitigation controls. The authors propose sub-optimal 
-control policies and perform numeric simulations with genetic 
-algorithms. The controlled version used in the mentioned 
+  If a emergent diseases lacks of a rapid diagnose test, therapy or vaccine,
+then isolation and quarantine of individuals feared exposed with the disease
+results an obvious control policy. For example \citet{Gumel2004} model
+strategies of this kind for the severe acute respiratory syndrome (SARS).
+SARS was a highly contagious, viral disease, emerged in China late in 
+\num{2002}  and quickly spread to \num{32} countries and regions causing in 
+excess of \num{774} deaths and \num{8098} infections worldwide.
+
+Based in the work of \citet{Gumel2004}, \citeauthor{Yan2008} report in 
+\cite{Yan2008} a control epidemic model for SARS. They use quarantine and 
+isolation as mitigation controls. The authors also propose sub-optimal control 
+policies and perform numeric simulations with genetic algorithms. The 
+controlled version used in the mentioned 
 reference reads:
 %
 %
@@ -102,6 +110,9 @@ minimize the functional cost
       \right]
       dt.
 \end{equation}
+Here, parameters $B_i$ denotes the linear cost regarding to the infected 
+classes and $C_1, C_2$ the cost for isolation and quarantine controls.
+\Cref{tbl:sars_table_des} displays a description of the regarding parameters.
 %
 \begin{table}[H]
     \begin{center}

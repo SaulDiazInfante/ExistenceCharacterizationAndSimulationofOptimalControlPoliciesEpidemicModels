@@ -1,5 +1,4 @@
 %\section{Existence and characterization of optimal policies}
-\input{Notation.tex}
 The non controlled epidemic models described above are of the form 
     \begin{eqnarray*}
 \dot{X} & = & AX +  
@@ -166,6 +165,7 @@ where $g$ determines the cost functional \eqref{CostFunctional} and $f$ is given
 \end{enumerate}
 If, for each $t$, the function $\mathcal{H}^\ast(\cdot,\lambda(t))$ is convex on $\mathbf{X}$, then $(u^\ast,X^\ast)$ is an optimal pair.
 \end{theorem}
+\todo{REMARK}
 
 \begin{proof} The conclusion follows from Theorem \ref{SufficientCond}, whenever Assumptions \ref{ContinuityH} and \ref{piecewise} hold. 
 If $u^\ast$ is piecewise continuous, then $X^\ast$ is absolutely continuous, by Theorem \ref{ExAdmisPair}, and so continuous. Thus Assumption \ref{piecewise} holds. Assumption \ref{ContinuityH} also holds since $\mathcal{H}$ and $\mathcal{H}_x$ are clearly continuous. This completes the proof.

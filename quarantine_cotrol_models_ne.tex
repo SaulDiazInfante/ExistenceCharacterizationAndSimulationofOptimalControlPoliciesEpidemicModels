@@ -1,4 +1,22 @@
 \subsection*{SARS}
+  Since SARS lacks of valid medicines or vaccines, measures to control the 
+spread of SARS had to take two major forms: isolation of symptomatic 
+individuals and quarantining and close observation of asymptomatic 
+individuals \cite{who_sars}. We return to model \eqref{eqn:sars_model} and 
+obtain via the forward-backward-sweep method the optimal policies. We use the 
+value parameters listed in \Cref{tbl:sars_table}.
+
+  \Cref{fig:figure1sars} displays at left, a likening between the controlled 
+total infected population $E + Q + I + J$. Here we contrast the resulting
+dynamics using a constant policy (solid green), $\widehat{u}_1 = \num{0.2}$,
+$\widehat{u}_2 = \num{0.2}$ with the optimal quarantine and isolation control 
+(dash orange) policies $u_1$, and $u_2$. At left, we see that in order to 
+minimize the total infected individuals, optimal control quarantine $u_1$ is at 
+its upper bound during more than \SI{150}{days}, then $u_1$ is steadily 
+decreased to the lower bound. Optimal control isolation $u_2$ stays at its 
+upper bound about \SI{70}{days} and then steadily decreases to the lower bound 
+over the rest simulated time.
+
 \begin{table}[H]
     \begin{center}
       \begin{tabular}{@{}rlrl@{}}
@@ -62,7 +80,7 @@
      \end{center}
 \end{table}
 
-\begin{figure}[H]
+\begin{figure}[t]
   \centering
   \includegraphics{Figures/figure_1_sars}
   \caption{At left, a likening of the whole infected population
@@ -87,3 +105,8 @@
   }
   \label{fig:figure3sars}
 \end{figure}
+
+\Cref{fig:figure2sars} contrast the evolution of the dynamics controlled with
+the optimal policy, a constant policy 
+$\widehat{u}_1 = \widehat{u}_2=\num{0.2}$ and the lower bound policy,
+$\bar{u_1} = \bar{u_2} = \num{0.05}$.

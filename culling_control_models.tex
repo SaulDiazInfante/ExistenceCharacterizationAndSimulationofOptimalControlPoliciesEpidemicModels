@@ -1,7 +1,20 @@
+Pathogens that are transmitted between wildlife, livestock and humans present
+major challenges for the protection of human and animal health: the economic
+sustainability of agriculture and the conservation of wildlife. Mycobacterium
+bovis, the aetiological agent of bovine tuberculosis (TB), is one such pathogen.
+For example, according with \citet{Donnelly2003} the incidence of TB in cattle 
+has increased substantially in parts of Great Britain in the past two decades, 
+adversely affecting the livelihoods of cattle farmers and potentially 
+increasing the risks of human exposure. The control of bovine TB in Great 
+Britain is complicated by the involvement of wildlife, particularly badgers 
+which appear to sustain endemic infection and can transmit TB to cattle. 
+Between \num{1975} and \num{1997} over \num{20000} badgers were
+culled as part of British TB control policy, generating conflict between
+conservation and farming interest groups.
+
 \subsection*{Badger bovine tuberculosis}
-Here we present the model reported in \cite*{Bolzoni2014} to describe a 
-outbreak of badger bovine tuberculosis. The regarding 
-uncontrolled model reads
+\citet{Bolzoni2014} reports a controlled model to describe a outbreak of badger 
+bovine tuberculosis. The regarding uncontrolled model reads
 
 \begin{equation}\label{eqn:culling}
 	\begin{aligned}
@@ -25,11 +38,15 @@ uncontrolled model reads
 \end{equation}
 %
 Here the susceptible follow a logistic growth with net grow rate
-$r= \nu - \mu$ and carrying capacity $K$. According with the approach, 
+$r = \nu - \mu$ and carrying capacity $K$. According with the approach, 
 of \citet{VandenDriessche2017}, the regarding reproductive number results
 $$
-  R_0 = \frac{\beta K}{\alpha + \mu}
+  R_0 = \frac{\beta K}{\alpha + \mu}.
 $$ 
+Our intention with this model is illustrate the difference between quadratic 
+and bang-bang controls. As will see, according with model \eqref{eqn:culling}.
+The resulting controlled dynamics with this kind of controls is similar in some 
+cases, but is unclear which is better.
 \begin{table}
   \begin{center}
     \begin{tabular}{@{}rl@{}}

@@ -52,7 +52,7 @@
 }
 \makeatother
 \title[%
-	Existence, characterization and simulation of OCP for some epidemic 
+	Existence, characterization and simulation of OCP for a family of epidemic 
 	Models%
 	]{
 	Existence, characterization, and simulation
@@ -88,10 +88,12 @@
 %
   \section{Introduction}
     \input{introduction}
-  \section{Classic epidemic models}
+  \section{The uncontrolled SIR model}
     \input{sec_intro_epidemics}
   \section{Control Policies in Epidemics}
     \input{sec_control_epidemic_polices}
+        \subsection{Culling}
+    \input{culling_control_models.tex}
     \subsection{Vaccination}
       \input{epidemic_model}
     %  \input{vacination_control_models}
@@ -101,8 +103,7 @@
       \input{treatement_control_models}
     \subsection{Isolation and Quarantine}
       \input{quarantine_cotrol_models}
-    \subsection{Culling}
-      \input{culling_control_models.tex}
+
   \section{Existence and characterization of optimal policies}
     \input{TheoreticalResults}
 %
@@ -110,18 +111,19 @@
   \section{Numerical analysis}
     \input{numerical_methods}
   \section{Numerical experiments}
+    \subsection{Culling}
+      \input{culling_control_models_ne}
     \subsection{Vaccination}
       \input{epidemic_model_ne}
     \subsection{Case Finding and Case Control}
       \input{treatement_control_models_ne}
     \subsection{Isolation and Quarantine}
       \input{quarantine_cotrol_models_ne}
-    \subsection{Culling}
-      \input{culling_control_models_ne}
+
 %
 %
   \section{Concluding remarks}
-%
+   \input{concluding_remarks}
   \section{Appendix: Deterministic OCPs in continuous time}
     \input{Pontryagin}
 %

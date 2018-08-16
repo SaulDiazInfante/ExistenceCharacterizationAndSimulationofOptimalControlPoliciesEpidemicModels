@@ -1,4 +1,10 @@
 \subsection*{Badger bovine Tuberculosis}
+In this last numerical experiment we return back to the culling control model
+\eqref{eqn:culling}. Our main objective is contrast a two kind of controls: 
+bang-bang versus quadratic. All simulation runs with the 
+forward-backward-method and with the parameters enclosed in \Cref{tbl:culling}.
+
+
 \begin{table}[H]
   \begin{center}
     \begin{tabular}{@{}rllc@{}}
@@ -25,7 +31,7 @@
         & \num{0.05}
       \\
       $R_0$
-        & \num{2.0}
+        & \num{6.0}, \num{3.5}
         && 
           \textbf{Control bound}
       \\
@@ -40,11 +46,14 @@
           $u_{max} = \num{0.1}$
       \\
       $P$
-        & \num{40.0}
+        & \num{70.0}, \num{110.0}
       \\
       \bottomrule
     \end{tabular}
   \end{center}
+  \caption{Parameters values of model \eqref{eqn:culling} to reproduce 
+  \Cref{fig:figure1culling,fig:figure2culling,fig:figure3culling}.}
+  \label{tbl:culling}
 \end{table}
 
 \begin{figure}[H]
