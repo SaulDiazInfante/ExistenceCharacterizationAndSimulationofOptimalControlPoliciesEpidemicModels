@@ -37,16 +37,18 @@ bovine tuberculosis. The regarding uncontrolled model reads
 	\end{aligned}
 \end{equation}
 %
-Here the susceptible follow a logistic growth with net grow rate
-$r = \nu - \mu$ and carrying capacity $K$. According with the approach, 
-of \citet{VandenDriessche2017}, the regarding reproductive number results
+Here the susceptible class follows a logistic dynamics with net grow rate
+$r = \nu - \mu$ and carrying capacity $K$, see \Cref{tbl:culling} for more 
+details. According with the approach, 
+of \citet{VandenDriessche2017}, the regarding basic reproductive number results
 $$
   R_0 = \frac{\beta K}{\alpha + \mu}.
 $$ 
-Our intention with this model is illustrate the difference between quadratic 
-and bang-bang controls. As will see, according with model \eqref{eqn:culling}.
-The resulting controlled dynamics with this kind of controls is similar in some 
-cases, but is unclear which is better.
+  Our intention with this model is to illustrate the difference between
+quadratic and bang-bang controls. As will see, according to model 
+\eqref{eqn:culling} the resulting controlled dynamics with this kind of 
+policies depends on the form of the functional cost and the basic reproductive 
+number, so is very important to choose a correct structure.
 \begin{table}
   \begin{center}
     \begin{tabular}{@{}rl@{}}
