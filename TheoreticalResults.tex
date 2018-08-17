@@ -27,7 +27,7 @@ Let $\mathbf{X}\s\R^n$ and $\mathbf{U}\s \R^m$ be nonempty and compact sets. The
 respectively called the {\it state space} and the {\it control space}. The vectors in $X$ have non-negative entries, in particular we assume that $0\in X$. The control set $\mathbf{U}$ is convex. We consider the following control system, for $j=1,\ldots,n$, 
 \begin{equation}\label{FamilyControlSystem}
     \dot{X}_j  =  [r_j(A) + u^\top C^{(j)}]X +
-    [X^\top \cdots X^\top]     \begin{bmatrix}
+    X^\top    \begin{bmatrix}
     r_1(B^{(j)}) + u^\top D^{(j1)}\\
     \vdots \\
     r_n(B^{(j)}) + u^\top D^{(jn)}
@@ -165,8 +165,11 @@ where $g$ determines the cost functional \eqref{CostFunctional} and $f$ is given
 \end{enumerate}
 If, for each $t$, the function $\mathcal{H}^\ast(\cdot,\lambda(t))$ is convex on $\mathbf{X}$, then $(u^\ast,X^\ast)$ is an optimal pair.
 \end{theorem}
-\todo{REMARK}
+%\todo{REMARK}
 
 \begin{proof} The conclusion follows from Theorem \ref{SufficientCond}, whenever Assumptions \ref{ContinuityH} and \ref{piecewise} hold. 
 If $u^\ast$ is piecewise continuous, then $X^\ast$ is absolutely continuous, by Theorem \ref{ExAdmisPair}, and so continuous. Thus Assumption \ref{piecewise} holds. Assumption \ref{ContinuityH} also holds since $\mathcal{H}$ and $\mathcal{H}_x$ are clearly continuous. This completes the proof.
 \end{proof}
+
+\begin{remark} In general, the convexity of $H^\ast(\cdot,\lambda(t))$ does not hold for the whole family \eqref{FamilyControlSystem} even if $g$ is convex. However, the models above meet this assumption.  
+\end{remark}
