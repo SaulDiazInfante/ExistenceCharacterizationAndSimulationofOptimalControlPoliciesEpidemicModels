@@ -1,13 +1,31 @@
-Infectious diseases sculpt civilizations. The three most devastating pandemics 
-in human history are: the Black Death, Spanish influenza, and HIV/AIDS.
-The Black Death killed more than 30 \% of Europe's total 
-population. The Spanish flu pandemic of 1918 infected an estimated 500 million 
-people worldwide—about one-third of the planet's population—and killed an more 
-than 20 million victims and HIV/AIDS have been killed more than 35 million 
-people. The consequence of all this pandemics influence politics, 
-territories, economics, that is, they implicit drives the development of 
-civilizations.
+  Infectious diseases sculpt civilizations. The three most devastating 
+pandemics in human history: the Black Death, Spanish influenza, and HIV/AIDS
+have been killed more than 100 million people. Therefore, understand the
+mechanism of spreed and control of diseases of this kind is wide important.
 
-Therefore, understand the mechanism of spreed and control of diseases of this 
-kind wide important. In this line, SIR model is the first option to explore 
-spreading.
+  In this line, the SIR structure is a first option to model spreading. The SIR 
+model is a compartmental structure. Essentially, the model consists of three 
+compartments: $S$, $I$, $R$, that respectively represent the number of 
+susceptible infected and recovered, and certain transitions functions between 
+classes.
+
+  Practically all the existing epidemic models are variants of this structure. 
+The variants emerge to describe particular characteristics of a disease, 
+mechanism of transmission, population dynamics, among others. 
+To fix ideas, consider a very  popular epidemic models reported by 
+\citet{Kermac}
+\begin{equation}
+  \begin{aligned}
+    \frac{dS}{dt} & = - \kappa SI
+      \\
+    \frac{dI}{dt} & = \kappa SI - \lambda I
+      \\
+    \frac{dR}{dt} & = \lambda I,
+  \end{aligned}
+\end{equation}
+here the transition from the susceptible $S$ to the infected class $I$ 
+occur with constant rate $\kappa$, and from  the infected class $I$ to the 
+recovered happens with rate $\lambda$.
+
+In next sections, we provide the main ideas to control modifications of this 
+base structure with optimal policies.
