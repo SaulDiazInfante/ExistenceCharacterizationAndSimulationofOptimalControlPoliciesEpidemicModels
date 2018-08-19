@@ -1,7 +1,50 @@
 \subsection{Popular methods}
+  Since we can transform the problem of optimal control into a two-point 
+boundary ODE problem, the methods designed for this sort of problem are 
+applicable see \cite{Keller1976, Ascher1987} for classic references. In this 
+line \cite{Caetano2001,Yan2008} use multiple shooting methods to solve the 
+resulting extended two-value boundary ode.
+\paragraph{Multiple shooting method}
+  Roughly speaking, the multiple shooting method follows the next algorithm.
+  Consider the controlled dynamics and corresponding adjoint equations given by
+  \begin{equation}
+    \label{eqn:extended_tpvbp}
+    \begin{aligned}
+      \dot{x}(t) &= 
+        f(x(t), u(t)), \qquad x(0)=x_0 \\
+      \dot{\lambda}(t) &=
+        -\mathcal{H}_x(t,x(t),u(t),\lambda_0,\lambda(t))^\top, \quad 
+        \lambda(T)=0.
+    \end{aligned}
+  \end{equation}
+   Given  partition of the interval $[0, T]$ with uniform step $h$,
+   $$
+    \tau_h^n:= \{t_k = kh, \ k=0,\dots n\}
+   $$
+  \begin{enumerate}[Step 1]
+    \item
+      Choose $y_i := [x(t_i ), \lambda(t_i )], \quad i = 1,\dots, n$. 
+    \item 
+      Integrate \eqref{eqn:extended_tpvbp} for each time interval $[t_i , 
+      t_{i+1})$ 
+      using $y_i$ as the initial conditions and
+      obtaining $y(t_{i−1}) = [x(t_{i−1}), \lambda(t_{i−1})]$, 
+      $i=2, \dots, n$.
+    \item
+      Compute $y^{new}:= y_i − y(t_i )$.  
+      If $y^{new}$ is sufficiently close to a minimum value, then stop; 
+      Else actualize the initial conditions $y_i$ 
+      for the next iteration (using, for instance, the Newton-Raphson 
+      algorithm) and go to  Step 2.   
+\end{enumerate}  
+   
+  
+    
+
+
 \paragraph{The Forward-Backward-Sweep}
 	\cite{hackbusch1978numerical}
-\paragraph{Multiple shooting method}
+
 	\cite*{Pesch1989} , [Saúl]
 \paragraph{Genetic Algorithms}
 	[Frank]

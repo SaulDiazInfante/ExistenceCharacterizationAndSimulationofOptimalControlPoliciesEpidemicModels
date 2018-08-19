@@ -41,7 +41,7 @@ is convex, then there exists an optimal pair $(u^\ast,X^\ast)$.
 \end{theorem} 
 
 
-
+\todo{With ot without mathcal H, ask to David}
 
 
 Define the {\it Hamiltonian}, for each  $(t,x,u,\lambda_0,\lambda)$ in $[0,T]\times \mathbf{X}\times \mathbf{U}\times\R\times\R^n$,
@@ -70,7 +70,9 @@ that satisfy
 \begin{enumerate}[\rm (a)]
     \item the maximum condition, for almost every $t\in[0,T]$, 
         \begin{equation}\label{MaxCond}
-             H(t,X^\ast(t),u^\ast(t),\lambda_0,\lambda(t)) \geq  H(t,X^\ast(t),u,\lambda_0,\lambda(t)) \quad \forall u\in \mathbf{U},
+             \mathcal{H}(t,X^\ast(t),u^\ast(t),\lambda_0,\lambda(t)) \geq  
+             \mathcal{H}(t,X^\ast(t),u,\lambda_0,\lambda(t)) \quad \forall u\in 
+             \mathbf{U},
         \end{equation}
 \item the adjoint equation, for almost every $t\in[0,T]$, 
       \begin{equation}\label{AdjEq}
