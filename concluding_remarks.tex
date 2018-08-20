@@ -27,7 +27,7 @@ evolution introducing operators for mutation ($\mathbf{M}$), crossover
 on evolutionary methods was developed by George E. P. Box \cite{Box1957}.
 Nevertheless, it can be said tat the first evolutionary algorithm at
 least as they are known today, was the so called Genetic Algorithm (GA) 
-introduced by J. H. Hollad \cite{JHH1975}. Since then many variations of
+introduced by J. H. Holland \cite{JHH1975}. Since then many variations of
 evolutionary algorithms have been developed being Differential Evolution (DE),
 introduced by Price and Storn \cite{Storn1997}, one of the simplest yet efficient and 
 effective optimization algorithms. Algorithm \ref{alg:DE1} shows the 
@@ -65,4 +65,35 @@ algorithm.
 \end{algorithm}%
 
 
-Falta....
+Regarding the optimal control policies problem, the evolutionary 
+method is commonly applied by using piecewise constant functions for the 
+controllers $u_k$, $k=1,2,\dots,n$. For instance, the optimization of a
+quantity of the form
+\begin{equation}
+J(u_1,u_2,\dots,u_n) = \int_0^T{\left[ \mathcal{L}(t) + w_1\,u_1^2(t) + 
+w_2\,u_2^2(t)+\dots + w_n\,u_n^2(t) \right]\,dt},
+\label{eq:Jaccion}
+\end{equation}
+with weight constants $w_k$, can be conducted by discretizing the 
+interval $I = [0,T]$ {\color{red}(cerrado o abierto, ustedes decidan)} in disjoints subintervals $I_j$ and choosing  
+\begin{equation}\label{DECrossover}
+u_{k}(t) =
+\begin{cases}
+u^j_{k} & \text{if $t \in I_j$}
+\vspace*{0.1cm}\\
+0 & \text{otherwise.}
+\end{cases}
+\end{equation}
+Usually the functional under the sign of integral in Eq. (\ref{eq:Jaccion})
+obeys certain dynamical model which need to be solved but in such a way
+that $J$ be optimized. Now, the numbers $u^j_{k}$ will be part of an 
+individual who will be subject to the evolutionary process. This approach 
+has been followed for example in \cite{Yan2008} and \cite{Jang2018}, 
+respectively for the GA and the DE algorithms. {\color{red} Nevertheless,
+it would be quite
+interesting to address the problem of considering the control functions 
+as  general differentiable functions (or at least combinations of a 
+small subset of some well known functions and operators) in the whole 
+interval $I$ (or almost everywhere in I, or except in a finite number of 
+points in $I$). As far as we know, there is no work addressing the optimal control policies problem in this manner, and thus this paragraph intends to motivate further research in this direction.} (no se si poner esto ultimo que puse en rojo, arreglen la redaccion segun convenga)
+
