@@ -40,15 +40,13 @@ F(t,x):= \{ (\alpha, y)\in \mathbb{R}\times \mathbb{R}^n\mid
 is convex, then there exists an optimal pair $(u^\ast,X^\ast)$.
 \end{theorem} 
 
-
-\todo{With ot without mathcal H, ask to David}
-
-
-Define the {\it Hamiltonian}, for each  $(t,x,u,\lambda_0,\lambda)$ in $[0,T]\times \mathbf{X}\times \mathbf{U}\times\R\times\R^n$,
-    \[H(t,x,u,\lambda_0,\lambda):= \lambda_0g(t,x,u) + \lambda^\top f(t,x,u).  \]  
+Define the {\it Hamiltonian}, for each  $(t,x,u,\lambda_0,\lambda)$ in 
+$[0,T]\times \mathbf{X}\times \mathbf{U}\times\R\times\R^n$,
+    \[H(t,x,u,\lambda_0,\lambda):= \lambda_0g(t,x,u) + \lambda^\top f(t,x,u).  
+    \]  
     
 
-\begin{assumption}\label{MPassump}\rm  %In addition to Assumptions 1, 2, and 3, the Hamiltonian satisfies the following.
+\begin{assumption}\label{MPassump}\rm  
 \begin{enumerate}[(a)]
     \item The function $h$ is of class $\mathcal{C}^1$.
 %    \item For every $(u,x,\lambda_0,\lambda)$, the function $H(\cdot,x,u,\lambda_0,\lambda)$ is measurable.

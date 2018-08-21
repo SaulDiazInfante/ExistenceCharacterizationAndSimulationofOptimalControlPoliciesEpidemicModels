@@ -71,9 +71,8 @@ the multi shooting method follows the \Cref{alg:multishooting}.
   scheme to solve a class of optimal problems that encloses our applications.
   \citet{lenhart2007optimal} provides MATLAB code for many of its regarding
   work in biological models.
-\cite*{Pesch1989} , [Saúl]
+\cite*{Pesch1989}
 \paragraph{Genetic Algorithms}
-[Frank]
 \begin{algorithm}
   \caption{Forward Backward Sweep } \label{alg:forward_backward_sweep}
   \begin{flushleft}
@@ -123,4 +122,80 @@ the multi shooting method follows the \Cref{alg:multishooting}.
     \EndProcedure
   \end{algorithmic}
 \end{algorithm}
+
+\paragraph{\it Evolutionary algorithms}
+Evolutionary algorithms are a kind of heuristics algorithms well 
+suited for global optimization. Such algorithms emulate natural
+evolution introducing operators for mutation ($\mathbf{M}$), crossover 
+($\mathbf{C}$) and selection ($\mathbf{S}$). One of the earliest works
+on evolutionary methods was developed by George E. P. Box \cite{Box1957}.
+Nevertheless, it can be said tat the first evolutionary algorithm at
+least as they are known today, was the so called Genetic Algorithm (GA) 
+introduced by \citet{JHH1975}. Since then many variations of
+evolutionary algorithms have been developed being Differential Evolution (DE),
+introduced by \citet{Storn1997}, one of the simplest yet 
+efficient and 
+effective optimization algorithms. Algorithm \ref{alg:DE1} shows the 
+general form of Evolutionary Algorithms for optimizing the $fob$ 
+objective function. There, an initial population $Y$ of size $N_p$, 
+generated in the search space $\mathcal{V}$ by the operator $\mathbf{Y}_0$;
+is subject to the evolutionary process until certain stopping criterion is 
+met. Then the best individual ($\mathbf{y}_{best}$), i.e., the individual who
+optimizes $fob$, is selected by introducing the operator $\mathbf{Best}$. 
+In Algorithm \ref{alg:DE1} the variable $M$ stores a mutated population, 
+the variable $C$ stores the results of the crossover operator. The selection
+operator selects from $C$ and $Y$ the individuals which will conform the new
+generation of individuals of $Y$. This selection is based in some criteria 
+usually dictated by the
+objective function. For instance, if $\mathbf{y}$ is an element of $Y$
+and $\mathbf{c}$ an element of $C$, a common criterion for minimization is 
+to select $\mathbf{y}$ if $fob(\mathbf{y})<fob(\mathbf{c})$.
+A detailed explanation for constructing the main operators 
+$\mathbf{M}$, $\mathbf{C}$ and $\mathbf{S}$, can be found in
+\cite{Bagchi1999} for GA and in \cite{Price_Storn2005} for the DE
+algorithm.
+%
+\begin{algorithm}[htb]
+  \caption{Evolutionary Algorithms}
+  \label{alg:DE1}
+  \begin{algorithmic}
+    % \small
+    \State $Y$ $\leftarrow$ $\mathbf{Y}_0(Np,\mathcal{V})$
+    \While{(the stopping criterion has not been met)}
+    \State $M$ $\leftarrow$  $\mathbf{M}(Y)$
+    \State $C$ $\leftarrow$  $\mathbf{C}(Y,C)$
+    \State $Y$ $\leftarrow$  $\mathbf{S}(Y,C,fob)$ 
+    \EndWhile
+    \State $\mathbf{y}_{best} \leftarrow \mathbf{Best}(Y, fob)$
+  \end{algorithmic}
+\end{algorithm}%
+
+
+Regarding the optimal control policies problem, the evolutionary 
+method is commonly applied by using piecewise constant functions for the 
+controllers $u_k$, $k=1,2,\dots,n$. For instance, the optimization of a
+quantity of the form
+\begin{equation}
+  J(u_1,u_2,\dots,u_n) = \int_0^T{\left[ \mathcal{L}(t) + w_1\,u_1^2(t) + 
+  w_2\,u_2^2(t)+\dots + w_n\,u_n^2(t) \right]\,dt},
+\label{eq:Jaccion}
+\end{equation}
+with weight constants $w_k$, can be conducted by discretizing the 
+interval $I = [0,T]$ in disjoints subintervals $I_j$ and choosing  
+\begin{equation}\label{DECrossover}
+  u_{k}(t) =
+  \begin{cases}
+    u^j_{k} & \text{if $t \in I_j$}
+      \vspace*{0.1cm}\\
+      0 & \text{otherwise.}
+  \end{cases}
+\end{equation}
+  Usually the functional under the sign of integral in \Cref{eq:Jaccion}
+obeys certain dynamical model which need to be solved but in such a way
+that $J$ is optimized. Now, the numbers $u^j_{k}$ will be part of an 
+individual who will be subject to the evolutionary process. This approach 
+has been followed for example in \cite{Yan2008} and \cite{Jang2018}, 
+respectively for the GA and the DE algorithms.
+
+\paragraph{joint paragraph}
 
