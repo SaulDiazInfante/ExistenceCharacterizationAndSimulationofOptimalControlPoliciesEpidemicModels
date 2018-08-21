@@ -13,7 +13,7 @@ Consider the controlled dynamics and corresponding adjoint equations given by
     \dot{x}(t) &= 
     f(x(t), u(t)), \qquad x(0)=x_0 \\
     \dot{\lambda}(t) &=
-    -\mathcal{H}_x(t,x(t),u(t),\lambda_0,\lambda(t))^\top, \quad 
+    -\mathcal{H}_x(x(t),u(t),\lambda(t))^\top, \quad 
     \lambda(T)=0.
   \end{aligned}
 \end{equation}
@@ -31,7 +31,7 @@ the multi shooting method follows the \Cref{alg:multishooting}.
     $x^*, u^*, \lambda$
   \end{flushleft}
   \begin{algorithmic}
-    \Procedure{Multi  shooting}{$g,\lambda_{\text{function}}, 
+    \Procedure{Multi\_shooting}{$g,\lambda_{\text{function}}, 
       u, x_0, 
       \lambda_f, h, n_{max}$} 
       \While{$ \epsilon > \text{tol}  $}
@@ -81,7 +81,7 @@ the multi shooting method follows the \Cref{alg:multishooting}.
     $x^*, u^*, \lambda$
   \end{flushleft}
   \begin{algorithmic}
-    \Procedure{Forward backward sweep}{$g,\lambda_{\text{function}}, 
+    \Procedure{Forward\_backward\_sweep}{$g,\lambda_{\text{function}}, 
       u, x_0, 
       \lambda_f, h, n_{max}$} 
     \While{$ \epsilon > \text{tol}  $}
