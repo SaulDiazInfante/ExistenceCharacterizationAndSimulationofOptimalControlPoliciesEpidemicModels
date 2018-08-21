@@ -13,12 +13,27 @@ The non controlled epidemic models described above are of the form
     B^{(n)}
   \end{bmatrix} \right) X + k
     \end{eqnarray*}
-where the matrix $A$ represents the linear part of the system, each matrix $B^{(j)}$, $j=1,\ldots,n$, gives the {\it interaction} part as a quadratic form, and $k$ is a constant vector. Thus the $j$-th row of the system takes the form 
+where the matrix $A$ represents the linear part of the system, each matrix 
+$B^{(j)}$, $j=1,\ldots,n$, gives the {\it interaction} part as a quadratic 
+form, and $k$ is a constant vector.
+In the sake of clarity we will use the following notation.
+\input{Notation.tex}
+
+ Thus the $j$-th row of the above system takes the form 
     \[ \dot{X}_j = r_j(A)X + X^\top B^{(j)}X + k_j.\]
 
-In this section we consider control policies in both the linear and the interaction parts of the latter system. This family of control systems with a corresponding  cost functional include the above epidemic models. 
+In this section we consider control policies in both the linear and the 
+interaction parts of the latter system. This family of control systems with a 
+corresponding  cost functional include the above epidemic models. 
 
-For such a family of optimal control problems we state and prove three main results. First, given any control policy, we establish the existence and uniqueness of the associated state path. Second, the existence of an optimal control policy is proved. Finally, by means of the Maximum Principle, sufficient conditions on a control policy and the corresponding state path are also given. Our proofs are based on general and well-known results in optimal control theory which, for completeness, are stated in the Appendix at the end of the paper. 
+For such a family of optimal control problems we state and prove three main 
+results. First, given any control policy, we establish the existence and 
+uniqueness of the associated state path. Second, the existence of an optimal 
+control policy is proved. Finally, by means of the Maximum Principle, 
+sufficient conditions on a control policy and the corresponding state path are 
+also given. Our proofs are based on general and well-known results in optimal 
+control theory which, for completeness, are stated in the Appendix at the end 
+of the paper.
 
 \subsection{A family of control systems}
 
