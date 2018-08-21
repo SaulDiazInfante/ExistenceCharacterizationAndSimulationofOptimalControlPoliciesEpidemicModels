@@ -1,4 +1,4 @@
-\subsection{Popular methods}
+\subsection{Direct and indirect methods}
 Since we can transform the problem of optimal control into a two-point 
 boundary ODE problem, the methods designed for this sort of problem are 
 applicable see \cite{Keller1976, Ascher1987, Stoer2013} for classic references. 
@@ -62,13 +62,13 @@ the multi shooting method follows the \Cref{alg:multishooting}.
   \end{algorithmic}
 \end{algorithm}
 
-\paragraph{The Forward-Backward-Sweep}
+
   However, the forward-backward-sweep method is the most popular method in 
-  works about optimal control epidemic models. Perhaps for its easy 
-  implementation and acceptable convergence, this method is the most used
-  on this kind of applications. In fact, all simulations presented in this work
-  runs with this scheme. \citet{hackbusch1978numerical} propose this numerical
-  scheme to solve a class of optimal problems that encloses our applications.
+works on optimal control epidemic models. Perhaps for its simple 
+implementation and acceptable convergence, this method is the most used on 
+this kind of applications. \citet{hackbusch1978numerical} propose this 
+numerical scheme to solve a class of optimal problems that encloses our 
+applications.
   \citet{lenhart2007optimal} provides MATLAB code for many of its regarding
   work in biological models.
 
@@ -122,7 +122,7 @@ the multi shooting method follows the \Cref{alg:multishooting}.
   \end{algorithmic}
 \end{algorithm}
 \medskip  
-\paragraph{\it Evolutionary algorithms}
+\subsection{Evolutionary algorithms}
 Evolutionary algorithms are a kind of heuristics algorithms well 
 suited for global optimization. Such algorithms emulate natural
 evolution introducing operators for mutation ($\mathbf{M}$), crossover 
