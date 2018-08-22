@@ -1,10 +1,9 @@
 Usually, public health organizations consider vaccination as a
-primarily preventive action again infectious disease, but is plausible only when
-represents an economic reward. 
-Due to the limited resources associated with vaccination programs, is imperative
+primarily preventive action against infectious diseases but it incurs a cost.%is plausible only when represents a benefit. 
+Due to the limited resources associated with vaccination programs, it is imperative
 to optimize the use of available resources. Using optimal control theory, we
 formulate a vaccination schedule. The goal is to minimize the number of infected
-persons and the cost of vaccine during a fixed time, to this example, we 
+persons and the cost of vaccine during a fixed time, for this example, we 
 optimize the functional
 $$
   J(u):= 
@@ -12,9 +11,9 @@ $$
     A I(t) + u^2(t) .
 $$
 Here $u$ is the vaccination control and denotes the fraction of
-susceptible individuals to vaccinate per unit of time. Since manage infected 
-population imply resource consume, $A$ means the regarding cost per individual.
-We also need a spreads dynamics. So, let $S(t)$, $E(t)$, $I(t)$, $R(t)$
+susceptible individuals to vaccinate per unit of time. Since managing infected 
+population imply resource consumption, $A$ represents the cost per individual.
+We also need a spread dynamics. So, let $S(t)$, $E(t)$, $I(t)$, $R(t)$
 respectively be the number of susceptible, exposed, infectious, and recovered
 (immune) individuals at time $t$. Since vaccination of
 the entire susceptible population is impractical, the model considers 
@@ -46,7 +45,7 @@ the growth of the entire population. Then, the optimal control problem reads
           (b - d)N(t) - aI(t), \quad N(0)= S_0 + E_0 + I_0 + R_0, 
   \end{aligned}
 \end{equation}
-see \Cref{tbl:epidemics_lenhart_des} for a parameters description.
+see \Cref{tbl:epidemics_lenhart_des} for a description of the parameters.
 
 \begin{table}[H]
   \begin{center}

@@ -104,37 +104,36 @@
 \end{table}
 %
 	\Cref{fig:figure1twostraintbm} shows the effect of case finding and 
-case holding controls. The combination of this strategies diminish the multi 
-drug resistant population. \Cref{tbl:parameters_MDR-TB_model} compiles the 
-parameters and its values used to produce this figure and fix 
+case holding controls. The combination of these strategies diminish the multi-drug resistant population. \Cref{tbl:parameters_MDR-TB_model} compiles the 
+parameters and its values used to produce this figure with
 $N = \num{30000}$, $\beta_3 = \num{0.29}$. To minimize the resistant TB 
 population, L2 + I2, the simulation suggest that the case holding strategy 
 $u_2$ would be at the upper bound during almost \SI{4.3}{years} and then 
 decreasing to the lower bound. Meanwhile, decreasing value for case finding
-must apply over the most of the simulated time, \SI{5}{years}. The total number 
+is applied over most of the simulated time, \SI{5}{years}. The total number 
 of 
 infected resistant TB $L2 + I2$  at the final time $t_f = \SI{5}{years}$ results
-\num{1123}. This same number but without control sums 4176. So this policies 
+\num{1123}. This same number, but without control, sums 4176. So this policy
 prevents \SI{3053}{cases} of resistant TB.
 
-  According with \Cref{tbl:parameters_MDR-TB_model} and taking different values
+  According to \Cref{tbl:parameters_MDR-TB_model} and taking different values
 for the parameter $\beta_3$, in \Cref{fig:figure2twostraintbm} we display 
 the effect of parameter $\beta_3$ over controls. 
 At the top, both controls experiment small variations 
-at the beginning and reach almost the same level after \SI{5}{year}. 
+at the beginning and reach almost the same level after \SI{5}{years}. 
 As wee see, the simulation suggest that just delay the same profile for few 
 months. At bottom we enclose  a zoom frame to emphasize the small difference for
-case holding. In resume, the simulation shows that parameters $\beta_3$ affect 
+case holding. Summarizing, the simulation shows that parameters $\beta_3$  
 modifies the case finding control in a wider way.
 
 	\Cref{fig:figure3twostraintbm} illustrates case finding and case holding 
-strategies under population of different sizes. The simulation suggest that
-under relative small population, is more important holds case finding at the 
+strategies under population of different sizes. The simulation suggests that
+under relative small population, is more important to hold case finding at the 
 top. While for relatively bigger population the case holding is the more 
 important strategy.
 
 All figures runs with the forward-backward-sweep method, see \cite{python_repo}
-to check a python implementation code.
+to check a Python implementation code.
 %
 \begin{figure}[H]
   \centering
@@ -151,11 +150,11 @@ to check a python implementation code.
   \centering
   \includegraphics{Figures/figure_2_two_strain_tbm}
   \caption{
-    Top case finding and case holding controls 
+    At top, case finding and case holding controls 
     under parameters encased in \Cref{tbl:parameters_MDR-TB_model} and
-    different values of parameter $\beta_3$. At bottom we capture a smaller
+    different values of parameter $\beta_3$. At bottom, we capture a smaller
     region to illustrate the variations regarding to case holding. Simulation 
-    suggest 
+    suggests 
     that case holding remains almost with the same profile, while case finding 
     delays same period for only for a few months.
   }\label{fig:figure2twostraintbm}
@@ -165,7 +164,7 @@ to check a python implementation code.
   \centering
   \includegraphics{Figures/figure_3_two_strain_tbm}
   \caption{
-    The effect of different size of populations. For 
+    The effect of different sizes of population. For 
     relatively small population, the case finding strategy is more important 
     than case finding, meanwhile for  bigger populations, the case holding 
     plays a more important role. The rest of parameters as in 

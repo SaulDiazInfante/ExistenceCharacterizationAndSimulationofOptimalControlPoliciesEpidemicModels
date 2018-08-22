@@ -41,7 +41,7 @@ controlled version reads:
 	  \end{aligned}
 	\end{equation}
 
-	\citeauthor*{Lenhart2002} consider time dependent 
+	\citeauthor*{Lenhart2002} \cite{Lenhart2002} consider time dependent 
 optimal control strategies associated with \emph{case holding} and 
 \emph{case finding}. They incorporate the case finding control by 
 adding a term which identifies and  cure a fraction 
@@ -51,14 +51,14 @@ case holding by adding a term which may decrease the
 treatment failure rate of individuals with sensitive  TB, so, this 
 control reduce the incidence of drug resistant TB. In model 
 \eqref{eqn:MDR-TB_model}, $u_1$ denotes the fraction of typical TB 
-latent individuals that is identified  and will put under treatment 
+latent individuals that are identified  and put under treatment 
 \textemdash case finding control\textemdash and 
 $1 - u_2$ represents the effort that prevents the failure treatment in 
 typical TB infectious individuals.
 
 	The controls $u_1$ ,$u_2$ reduce the latent and infected 
 groups with resistant TB. However, the case holding and the case finding 
-strategies produce a economic fee. In \cite{Lenhart2002} the authors use
+strategies produce a cost modeled as
 \begin{equation}\label{eqn:MDR-TB_action}
 	 J(u_1, u_2) =
 		 \int_0 ^ {t_f}
@@ -66,9 +66,8 @@ strategies produce a economic fee. In \cite{Lenhart2002} the authors use
 				 L_2(t) + I_2(t) 
 				 + \frac{B_1}{2} [u_1(t)] ^ 2
 				 + \frac{B_2}{2} [u_2(t)] ^ 2
-			 \right]dt,
+			 \right]dt.
 \end{equation}
-to describe the regarding cost.
 %
 %
 \begin{table}[htb]
