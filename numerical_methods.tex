@@ -175,11 +175,12 @@ evolutionary method by using piecewise constant functions for the controllers
 $u_k$, $k=1,2,\dots,n$. For instance, the optimization of a
 quantity of the form
 \begin{equation}
-  J(u_1,u_2,\dots,u_n) = \int_0^T{\left[ \mathcal{L}(t) + w_1\,u_1^2(t) + 
-  w_2\,u_2^2(t)+\dots + w_n\,u_n^2(t) \right]\,dt},
+  V(u, x_0) = 
+    \int_0^T
+      g(X(t), u(t)),
 \label{eq:Jaccion}
 \end{equation}
-with weight constants $w_k$, can be conducted by discretizing the 
+can be conducted by discretizing the 
 interval $I = [0,T]$ in disjoint subintervals $I_j$ and choosing  
 \begin{equation}\label{DECrossover}
   u_{k}(t) =
@@ -189,9 +190,9 @@ interval $I = [0,T]$ in disjoint subintervals $I_j$ and choosing
       0 & \text{otherwise.}
   \end{cases}
 \end{equation}
-  Usually the functional under the sign of integral in \Cref{eq:Jaccion}
+  Usually the function $X(t)$ under the sign of integral in \Cref{eq:Jaccion}
 obeys a specific dynamical model which needs to be solved but in such a way
-that $J$ is optimized. Now, the numbers $u^j_{k}$ will be part of an 
+that $V$ is optimized. Now, the numbers $u^j_{k}$ will be part of an 
 individual who will be subject to the evolutionary process. 
 \citet{Yan2008,Jang2018} follows this approach respectively for the GA and the 
 DE algorithms.
