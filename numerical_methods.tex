@@ -127,8 +127,8 @@ Evolutionary algorithms are a kind of heuristics algorithms well suited for
 global optimization. Such algorithms emulate natural evolution introducing 
 operators for the mutation ($\mathbf{M}$), crossover ($\mathbf{C}$) and 
 selection ($\mathbf{S}$). George E. P. Box \cite{Box1957}
-develop one of the earliest works on evolutionary methods. Nevertheless,  the 
-first evolutionary algorithm is the so-called Genetic Algorithm (GA) introduced 
+develop {\color{red} developed?} one of the earliest works on evolutionary methods. Nevertheless,  the 
+first evolutionary algorithm {\color{red} (el de Box tambien fue un algoritmo evolutivo pero no contiene todos los elementos de uno evolutivo moderno, por eso el primer algoritmo evolutivo como se conocen actualmente fue el genetico. Se me hace muy aventurado decir que el primer algoritmo evolutivo fue el genetico, por eso habia suavisado este punto)} is the so-called Genetic Algorithm (GA) introduced 
 by Holland \citet{JHH1975}. Since then, many variations of
 evolutionary algorithms have been developed being Differential Evolution (DE),
 introduced by \citet{Storn1997}, one of the simplest yet 
@@ -141,6 +141,10 @@ $\mathbf{Y}_0$. Then, this initial population is subject to a evolutionary
 until reaches a specific stopping criterion. Then the best individual 
 ($\mathbf{y}_{best}$), i.e., the individual who optimizes $fob$, is selected by 
 introducing the operator $\mathbf{Best}$. 
+{\color{red} (Se me hace confusa la redaccion del enunciado anterior. Lo que queria decir es:
+En tal algoritmo, una poblacion inicial Y de tamano NP y generada por el operador Y0 en el espacio de busqueda V, se somete al proceso evolutivo....)}
+
+
 In \Cref{alg:DE1} the variable $M$ stores a mutated population, 
 variable $C$ stores the results of the crossover operator. The selection
 operator selects from $C$ and $Y$ the individuals which will conform the new
