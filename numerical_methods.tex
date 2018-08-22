@@ -134,7 +134,9 @@ algorithm at least as they are known today, was the so called Genetic Algorithm
 (GA) introduced by \citet{JHH1975}. Since then many variations of
 evolutionary algorithms have been developed being Differential Evolution (DE),
 introduced by \citet{Storn1997}, one of the simplest yet 
-efficient and effective optimization algorithms. Algorithm \ref{alg:DE1} shows 
+efficient and effective optimization algorithms. 
+
+  Algorithm \ref{alg:DE1} shows 
 the general form of Evolutionary Algorithms for optimizing the $fob$ 
 objective function. There, an initial population $Y$ of size $N_p$, 
 generated in the search space $\mathcal{V}$ by the operator $\mathbf{Y}_0$;
@@ -148,7 +150,8 @@ generation of individuals of $Y$. This selection is based in some criteria
 usually dictated by the objective function. For instance, if $\mathbf{y}$ is an 
 element of $Y$ and $\mathbf{c}$ an element of $C$, a common criterion for 
 minimization is to select $\mathbf{y}$ if $fob(\mathbf{y})<fob(\mathbf{c})$.
-A detailed explanation for constructing the main operators 
+
+  A detailed explanation for constructing the main operators 
 $\mathbf{M}$, $\mathbf{C}$ and $\mathbf{S}$, can be found in
 \cite{Bagchi1999} for GA and in \cite{Price_Storn2005} for the DE
 algorithm.
