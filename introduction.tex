@@ -5,21 +5,21 @@ Although experts understand the mechanism of transmission of this  ``monster''
 until the early 20  century, it represents the first documented disease
 \citep[][]{bernoulli1760essai, bradley1971smallpox, Foppa2017} against which a
 specific control intervention was available: the inoculation. This process
-relies on put material from smallpox sores to healthy people. Usually scratching
+relies on putting material from smallpox sores to healthy people, usually scratching
 material over the armor or inhaling it through the nose. People develop the
 symptoms associated with smallpox---fever and a rash. However, the death rate
 due to inoculation is considerably lower than natural smallpox.
 
   Then Bernoulli naturally sets a question like this: What happens if everybody
-were inoculated? Here, we address the question: How to inoculated in optimal
-way? Throughout the following lines, we answer and illustrate the
+were inoculated? Here, we address the question: How to inoculate in an optimal
+way? Throughout the following lines, we try to answer and illustrate the
 implications of this question. 
 
   Optimal control theory is a way to deal with the above question.  In the
 fifties, Pontryagin and Bellman propose generalizations of the calculus of
-variations of broader applicability:  the maximum principle and the method of
-dynamic programming, respectively. Now, these results sustain application in the
-biological sciences, and, in particular, to the optimal control
+variations of broader applicability:  the Maximum Principle and the method of
+Dynamic Programming, respectively. Now, these results sustain application in the
+biological sciences and, in particular, to the optimal control
 of infectious diseases, see  \cite{Yu2018,Lahrouz2018,Jang2018,Cai2017b}
 for recent literature.
 
@@ -27,16 +27,16 @@ for recent literature.
 Principle \cite{pontryagin1962} and follows the same methodology of
 \citet{lenhart2007optimal}. Lenhart's work makes an accessible optimal control
 device to describe common epidemic interventions like vaccination, treatment,
-quarantine, isolation among others. Our intention in this work is illustrate
-the mentioned strategies throughout recent literature and state result for
-existence of control solution for a particular family of epidemic models.
-Likewise we present  important regarding goals and issues that appear with the
-relating theory and numerical approximations. In \cite{python_repo} we provide 
-the python implementation code of the forward-backward-sweep method  to generate
-the figures ot this chapter. The reader is free to comment, use, improve or 
-whatever he wants about this repository.
-
-
+quarantine, isolation among others. Our intention in this work is illustrating
+the mentioned strategies throughout recent literature and state results for
+existence and characterization of optimal controls for a particular family of epidemic models.
+Likewise we present some goals and issues that appear within the
+ theory and numerical approximations. 
+ 
+ The paper is organized as follows. We start in Section 2 by introducing a rather simple but seminal dynamical system from which most of the epidemic models are derived. In Section 3 we describe four epidemic models as well as some control policies. In Section 4 we provide the main theoretical results for a family of optimal control problems (OCPs); such a family includes the models in Section 3. Our proofs are based on well known results---stated, for completeness, in the Appendix of Section 8---from optimal control theory. Some numerical methods to solve OCPs are given in Section 5, in particular, we provide 
+the python implementation code of the forward-backward-sweep method in repository \cite{python_repo}. The reader is free to comment, use, improve or whatever he wants about this repository. In Section 6 we run several numerical experiments, based on \cite{python_repo}, for the models described in Section 3. We conclude with some remarks in Section 7.
+ 
+ 
 
 
 

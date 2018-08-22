@@ -6,6 +6,21 @@ enough interval; see, for instance, \cite{GaffSchaefer09} and the references
 therein.  
 \medskip
 
+\paragraph{\it Numerical Issues}
+  According with the forward-backward-sweep and multi shooting methods, both 
+schemes needs a ODE solver one of its steps. However some times this solver 
+generates spurious solutions as resulting of numeric instability. We see an 
+opportunity to  apply nonstandard numerical schemes which are consistent with 
+the underlying conservations laws, see for example the work of 
+\citet{Mickens2007a}.
+  
+  Regarding to the application of genetic algorithms, it would be interesting to address the problem of considering the control functions as general 
+functions and not only restricted to piecewise constant functions in the 
+interval $I$. As far as we know, there is no work addressing  the optimal 
+control policies problem in this manner, and thus this paragraph intends to 
+motivate further research in this direction.
+\medskip
+
 \paragraph{\it Maximum principle vs. Dynamic programming} 
   The same approach is followed in almost all the related literature on optimal
 control of epidemics/diseases. As an alternative, the so-called Dynamic
@@ -14,23 +29,7 @@ Maximum principle we need to solve a system of ordinary differential equations
 (ODEs) whereas in Dynamic programming a partial differential equation (PDE)
 arises. In addition, both approaches involve an optimization problem. The
 Maximum principle is mostly used because there are plenty of methods to
-numerically solve ODEs.
-\medskip
-\paragraph{\it Numerical Issues}
+numerically solve ODEs. 
 
-\medskip
-
-  According with the forward-backward-sweep and multi shooting methods, both 
-schemes needs a ODE solver one of its steps. However some times this solver 
-generates spurious solutions as resulting of numeric instability. We see an 
-opportunity to  apply nonstandard numerical schemes which are consistent with 
-the underlying conservations laws, see for example the work of 
-\citet{Mickens2007a}.
-  
-  Regarding to the application of genetic algorithms, it would be interesting 
-to address the problem of considering the control functions as general 
-functions and not only restricted to piecewise constant functions in the 
-interval $I$. As far as we know, there is no work addressing  the optimal 
-control policies problem in this manner, and thus this paragraph intends to 
-motivate further research in this direction.
+By following the DP approach, the optimal policies are obtained in {\it feedback} (or {\it Markov}) form, i.e., the control policy is a function of the state of the system. Thus the main advantage of such an approach is that  
 
