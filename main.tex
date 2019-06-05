@@ -1,8 +1,8 @@
-\documentclass[]{amsart}
+\documentclass[11pt]{amsart}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[numbers,sort&compress]{natbib}
+\usepackage[numbers, sort&compress]{natbib}
 \usepackage[a4paper,%
       top=3cm,%
       bottom=2cm,%
@@ -83,12 +83,19 @@
 }
 %
 %
+\keywords{
+  SIR, SIRS, SEIR, optimal control, epidemic models, 
+  forward-backward-sweep method, optimal polices, simulation}
+\subjclass[2010]{49K15, 92B05, 34H05}
+%
 \begin{document}
-\maketitle	
   \begin{abstract}
-  	We survey some some theoretical results about a family of optimal control problems that arise in epidemiology. We also implement the so-called forward-backward-sweep method in Python to find approximate optimal control policies via the Maximum principle. In addition, four specific models are described and simulated.  
+    We survey some some theoretical results about a family of optimal control problems that arise in epidemiology. 
+    We also implement the so-called forward-backward-sweep method in Python to find approximate optimal control
+    policies via the Maximum principle. In addition, four specific models are described and simulated.  
   \end{abstract}
-  
+\maketitle	
+    
 %
 
   \section{Introduction}
