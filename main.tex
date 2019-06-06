@@ -9,7 +9,7 @@
       left=3cm,%
       right=3cm,%
       marginparwidth=1.75cm]{geometry}
-\usepackage{amsmath,amsthm,amssymb,amsfonts,enumerate}
+\usepackage{amsmath, amsthm, amssymb, amsfonts, enumerate}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
@@ -89,14 +89,14 @@
 %
 \begin{document}
   \begin{abstract}
-    We survey some some theoretical results about a family of optimal control problems that arise in epidemiology. 
-    We also implement the so-called forward-backward-sweep method in Python to find approximate optimal control
-    policies via the Maximum principle. In addition, four specific models are described and simulated.  
+    We survey some some theoretical results about a family of optimal 
+    control problems that arise in epidemiology. We also implement the
+    so-called forward-backward-sweep method in Python to find approximate
+    optimal control policies via the Maximum principle. In addition,
+    four specific models are described and simulated.  
   \end{abstract}
 \maketitle	
-    
 %
-
   \section{Introduction}
   %
     \input{introduction}
@@ -119,7 +119,6 @@
   \section{Existence and characterization of optimal policies}
     \input{TheoreticalResults}
 %
-%
   \section{Numerical analysis}
     \input{numerical_methods}
     \input{optimal_control_software}
@@ -134,13 +133,11 @@
     \subsection{Isolation and quarantine for SARS} 
       \input{quarantine_cotrol_models_ne}
 %
-%
   \section{Concluding remarks}
    \input{concluding_remarks}
   \section{Appendix: Deterministic OCPs in continuous time}
     \input{Pontryagin}
 %
-%
   \bibliographystyle{plainnat}
-  \bibliography{references,OptimalControl-ContinuousControledEpidemicModels}
+  \bibliography{references, OptimalControl-ContinuousControledEpidemicModels}
 \end{document}
