@@ -88,8 +88,8 @@ work in biological models.
       \State $u_{\text{old}} \gets u$ 
       \State $x_{\text{old}} \gets x$ 
       \State $ x \gets$
-      \State $\lambda_{\text{old}} \gets \lambda $
       \Call{runge\_kutta\_forward}{$g, u, x_0, h$}
+      \State $\lambda_{\text{old}} \gets \lambda $
       \State $\lambda \gets$ 
         \Call{runge\_kutta\_backward}{%
        $\lambda_{\text{function}}, x, \lambda_f, h$}
