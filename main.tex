@@ -26,14 +26,19 @@
 \usepackage{listings}
 \usepackage{moreverb}
 %
-\newtheorem{theorem}{Theorem}
-\newtheorem{lemma}{Lemma}
-\newtheorem{definition}{Definition}
-\newtheorem{assumption}{Assumption}
-\newtheorem{remark}{Remark}
-\newtheorem{example}{Example}
-\newtheorem{proposition}{Proposition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{assumption}[theorem]{Assumption}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{definition}[theorem]{Definition}
 %
+
+\numberwithin{equation}{section}
+
+
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\s}{\subseteq}
@@ -64,11 +69,11 @@
 %
 %
 \author[S. D\'iaz-Infante]{Saul D\'iaz-Infante}
-\email{sdinfante@conacyt.mx} 
+\email{\tt sdinfante@conacyt.mx} 
 \author[F. Pe\~nu\~n\'{u}ri]{Francisco Pe\~n\'u\~nuri}
-\email{francisco.pa@correo.uady.mx}
+\email{\tt francisco.pa@correo.uady.mx}
 \author[D. Gonz\'alez-S\'anchez]{David Gonz\'alez-S\'anchez}
-\email{dgonzalezsa@conacyt.mx}
+\email{\tt dgonzalezsa@conacyt.mx}
 %
 \address[S. D\'iaz-Infante, D. Gonz\'alez-S\'anchez]{
   Departamento de Matem\'aticas, 
