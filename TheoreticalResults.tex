@@ -5,16 +5,16 @@
 
 The non controlled epidemic models described above are of the form 
     \begin{eqnarray*}
-\dot{X} & = & AX +  
-    \begin{bmatrix}
-    X^\top B^{(1)}\\
-    \vdots \\
-    X^\top B^{(n)}
-  \end{bmatrix}X + k  \\
-  & = & \left(A + [X^\top \cdots X^\top]     \begin{bmatrix}
-    B^{(1)}\\
-    \vdots \\
-    B^{(n)}
+        \dot{X} & = & AX +  
+        \begin{bmatrix}
+            X^\top B^{(1)}\\
+            \vdots \\
+            X^\top B^{(n)}
+        \end{bmatrix}X + k  \\
+        & = & \left(A + [X^\top \cdots X^\top]     \begin{bmatrix}
+        B^{(1)}\\
+        \vdots \\
+        B^{(n)}
   \end{bmatrix} \right) X + k
     \end{eqnarray*}
 where the matrix $A$ represents the linear part of the system, each matrix 
@@ -40,8 +40,11 @@ of the paper.
 \subsection{A family of control systems}
 
 
-Let $\mathbf{X}\s\R^n$ and $\mathbf{U}\s \R^m$ be nonempty and compact sets. The sets $\mathbf{X}$ and $\mathbf{U}$ are 
-respectively called the {\it state space} and the {\it control space}. The vectors in $X$ have non-negative entries, in particular we assume that $0\in X$. The control set $\mathbf{U}$ is convex. We consider the following control system, for $j=1,\ldots,n$, 
+Let $\mathbf{X}\s\R^n$ and $\mathbf{U}\s \R^m$ be nonempty and compact sets. 
+The sets $\mathbf{X}$ and $\mathbf{U}$ are 
+respectively called the {\it state space} and the {\it control space}. 
+The vectors in $X$ have non-negative entries, in particular we assume that $0\in X$. 
+The control set $\mathbf{U}$ is convex. We consider the following control system, for $j=1,\ldots,n$, 
 \begin{equation}\label{FamilyControlSystem}
     \dot{X}_j  =  [r_j(A) + u^\top C^{(j)}]X +
     X^\top    \begin{bmatrix}
@@ -52,21 +55,20 @@ respectively called the {\it state space} and the {\it control space}. The vecto
 \end{equation}
 where $A\in\R^{n\times n}$, $B^{(j)}\in\R^{n\times n}$, $C^{(j)}\in\R^{m\times n}$, and $ D^{(jl)}\in\R^{m\times n}$ for $l=1,\ldots,n$.
 
+% In order to guarantee the existence of a solution $x$ to \eqref{CoDiffEq}, 
+% we need the following.
 
-%In order to guarantee the existence of a solution $x$ to \eqref{CoDiffEq}, 
-%we need the following.
+The proof of the following theorem slightly differs from that given in Yong 
+\cite[Sect. 2.1]{Yong2015} since we consider a weighted norm.
+This improvement allows us to give a global solution instead of a local one. 
 
-
-
-
-The proof of the following theorem slightly differs from that given in Yong \cite[Sect. 2.1]{Yong2015} since we consider a weighted norm. This improvement allows us to give a global solution instead of a local one. 
-
-\begin{theorem}\label{ExAdmisPair} 
-For each measurable function 
-	$u:[0,T]\to \mathbf{U}$ and each initial condition $x_0\in X$, there exists a unique absolutely continuous function $X_u:[0,T]\to \R^n$ that satisfies the the system 
-	\eqref{FamilyControlSystem} almost everywhere. %The solution $x_u$ satisfies	\begin{equation}\label{ineqSol} 
-	%	|x_u(t)|\leq e^{Lt}(1+|x_0|) -1,\qquad t\in [0,T].	\end{equation}
-\end{theorem}
+\begin{theorem*}
+    For each measurable function 
+	$u:[0,T]\to \mathbf{U}$ and each initial condition $x_0\in X$,
+	there exists a unique absolutely continuous function 
+	$X_u:[0,T]\to \R^n$ that satisfies the the 
+	system \eqref{FamilyControlSystem} almost everywhere. 
+\end{theorem*}
 \begin{proof} Let $u:[0,T]\to U$ be a measurable function. The control system \eqref{FamilyControlSystem} can be written as
 \[\dot{X}(t)=f(X(t),u(t)), \quad X(0)=x_0,\quad 0\leq t\leq T,\]
 where $f:\mathbf{X}\times \mathbf{U}\to \R^n$. Since $f$ is of class $\mathcal{C}^1$ on the compact set $\mathbf{X}\times \mathbf{U}$, there exists a constant $L>0$ such that
@@ -94,92 +96,113 @@ thus $f(X(\cdot),u(\cdot))$ is Lebesgue integrable and $K[X]$ is absolutely cont
         & = &  L\|X-Y\|_w \sup_{t\in[0,T]}\frac{[e^{Lt}-1]/L}{e^{Lt}}\\
         & = &  (1-e^{-LT})\|X-Y\|_w. 
     \end{eqnarray*}
-Then by Banach's fixed point theorem \cite[Theorem 2.1]{Teschl}, there exists a unique $X\in \mathbb{X}$ satisfying 
-    \[ X(t)=x_0 + \int_0^t f(X(s),u(s))ds.\]
-Therefore \eqref{FamilyControlSystem} holds almost everywhere \cite[Corollary 5.4.1]{Loeb2016}.
+    Then by Banach's fixed point theorem \cite[Theorem 2.1]{Teschl}, there exists a unique $X\in 
+    \mathbb{X}$ 
+    satisfying 
+        \[ X(t)=x_0 + \int_0^t f(X(s),u(s))ds.\]
+    Therefore \eqref{FamilyControlSystem} holds almost everywhere 
+    \cite[Corollary 5.4.1]{Loeb2016}.
 \end{proof}
-
-
+%
+%
 \subsection{Existence of optimal policies}
-
-
-
-
 Consider the  {\it cost functional} of an admissible control $u$, given the initial state $x_0$, 
-        \begin{equation}\label{CostFunctional} V(u,x_0) := \int_0^Tg(X(t),u(t))\,dt,\end{equation}
-where $g: \mathbf{X}\times \mathbf{U}\to \R$ is continuous. The {\it optimal control problem} (OCP) consists of finding an admissible control $u^\ast$ such that
+\begin{equation}\label{CostFunctional} 
+    V(u,x_0) := \int_0 ^ T g(X(t), u(t)) \ ,dt,
+\end{equation}
+%
+where $g: \mathbf{X} \times \mathbf{U} \to \R$ is continuous. 
+The {\it optimal control problem} (OCP) consists of finding an admissible control $u^\ast$ such that
 \[ V(u^\ast,x_0)=\inf\{ V(u,x_0)\mid u\in \mathbb{U}_B \}.\]
-If there exists such a control $u^\ast$, then it is called an {\it optimal policy} or {\it optimal control}. The pair $(u^\ast,X^\ast)$, where $X^\ast$ is given by Theorem \ref{ExAdmisPair}, is called an {\it optimal pair}.
+If there exists such a control $u^\ast$, then it is called an 
+{\it optimal policy} or {\it optimal control}. 
+The pair $(u^\ast,X^\ast)$, where $X^\ast$ is given by 
+Theorem \ref{ExAdmisPair}, is called an {\it optimal pair}.
 
-
-\begin{theorem} Suppose the function $g$ is continuous, and, for each $x$,  the function $g(x,\cdot)$ is convex, i.e.,
-        \[  \alpha g(x,u_1) +(1-\alpha) g(x,u_2) \geq g(x,\alpha u_1+(1-\alpha)u_2) \quad \forall u_1,u_2\in\mathbf{U},\  \alpha\in [0,1]. \]
+\begin{theorem} 
+Suppose the function $g$ is continuous, and, for each $x$,  
+the function $g(x,\cdot)$ is convex, i.e.,
+\[  
+    \alpha g(x,u_1) +(1-\alpha) g(x,u_2) \geq g(x,\alpha u_1+(1-\alpha)u_2) \quad \forall u_1,u_2\in\mathbf{U},\  \alpha\in [0,1]. 
+\]
 Then there exists an optimal pair that minimizes \eqref{CostFunctional} subject to \eqref{FamilyControlSystem}. 
 \end{theorem}
-\begin{proof} Let us write the control system \eqref{FamilyControlSystem} as $\dot{X}=f(X,u)$. By Filippov's Theorem \ref{FilipovThm}, it is enough to show that each set   \[ 
- \{ (z, y)\in \mathbb{R}\times \mathbb{R}^n\mid  
-    z \geq g(x,u), \  y=f(x,u), \ u\in \mathbf{U}\},\qquad x\in X,
+\begin{proof}
+    Let us write the control system \eqref{FamilyControlSystem} as $\dot{X}=f(X,u)$. 
+    By Filippov's Theorem \ref{FilipovThm}, it is enough to show that each set   
+    \[ 
+        \{ (z, y)\in \mathbb{R}\times \mathbb{R}^n\mid  
+        z \geq g(x,u), \  y=f(x,u), \ u\in \mathbf{U}\},\qquad x\in X,
      \]  
-is convex. Fix $x\in X$. Let  $z_1,z_2\in \R$ and  $y_1,y_2\in \R^n$ such that
-      \begin{equation}\label{rj>g}
-          z_j\geq g(x,u_j),\quad   j=1,2, 
-      \end{equation}
-and 
+    is convex. Fix $x\in X$. Let  $z_1,z_2\in \R$ and  $y_1,y_2\in \R^n$ such that
+    \begin{equation}\label{rj>g}
+         z_j\geq g(x,u_j),\quad   j=1,2, 
+    \end{equation}
+    and 
     \begin{equation}\label{yj=f}
-  y_j=f(x,u_j),\quad j=1,2, 
-      \end{equation}
-for some $u_1,u_2\in U$. We need to show that, for any $\alpha\in[0,1]$, there exists $u'\in U$ such that
+        y_j=f(x,u_j),\quad j=1,2, 
+    \end{equation}
+    for some $u_1,u_2\in U$. 
+    We need to show that, for any $\alpha\in[0,1]$, there exists $u'\in U$ such that
     \begin{equation}\label{ccr>g}
     \alpha z_1 + (1-\alpha)z_2 \geq g(x,u') \end{equation}
-and 
+    and 
     \begin{equation}\label{ccy=f}
- \alpha y_1 + (1-\alpha)y_2 = f(x,u'). \end{equation}
-Let $u':=\alpha u_1 + (1-\alpha)u_2$. Then \eqref{ccr>g} follows from \eqref{rj>g} and the convexity of $g(x,\cdot)$. On the other hand, \eqref{ccy=f} holds because $f(x,\cdot)$ is affine, i.e.,  
-  \[ f(x,\alpha u_1+(1-\alpha)u_2) = \alpha f(x,u_1) +(1-\alpha) f(x,u_2). \]
+        \alpha y_1 + (1-\alpha)y_2 = f(x,u'). 
+    \end{equation}
+    Let $u':=\alpha u_1 + (1-\alpha)u_2$. 
+    Then \eqref{ccr>g} follows from \eqref{rj>g} and the convexity of $g(x,\cdot)$. 
+    On the other hand, \eqref{ccy=f} holds because $f(x,\cdot)$ is affine, i.e.,  
+    \[ 
+        f(x,\alpha u_1+(1-\alpha)u_2) 
+        = \alpha f(x,u_1) +(1-\alpha) f(x,u_2). 
+    \]
 \end{proof}
 
-
 \subsection{Sufficient conditions for optimality}
-
-Consider the Hamiltonian $\mathcal{H}:\mathbf{X}\times\mathbf{U}\times\R^n\to \R$, defined as 
-    \[\mathcal{H}(x,u,\lambda):= g(x,u) + \lambda^\top f(x,u),\]
-and
-\[ \mathcal{H}^\ast(x,\lambda)  :=  \inf_{u\in\mathbf{U}}\mathcal{H}(x,u,\lambda),\]
-where $g$ determines the cost functional \eqref{CostFunctional} and $f$ is given by the right-hand side of the control system \eqref{FamilyControlSystem}.
-
- The function $\lambda:[0,T]\to \R^n$ and the admisible pair $(u,X)$ are said to satisfy the necessary conditions of the {\it Maximum Principle} (MP) if they satisfy the
- {\it adjoint equation}
-\begin{equation}\label{AdjEqu}
+    Consider the Hamiltonian $\mathcal{H}:\mathbf{X}\times\mathbf{U}\times\R^n\to \R$, defined as 
+    \[
+        \mathcal{H}(x,u,\lambda):= g(x,u) + \lambda^\top f(x,u),
+    \]
+    and
+    \[ 
+        \mathcal{H}^\ast(x,\lambda)  
+        := \inf_{u\in\mathbf{U}}\mathcal{H}(x,u,\lambda),
+    \]
+    where $g$ determines the cost functional 
+    \eqref{CostFunctional} and $f$ is given by the right-hand side of the control system 
+    \eqref{FamilyControlSystem}.
+    The function $\lambda:[0,T]\to \R^n$ and the admissible pair 
+    $(u,X)$ are said to satisfy the necessary conditions of the 
+    {\it Maximum Principle} (MP) if they satisfy the
+    {\it adjoint equation}
+    \begin{equation}\label{AdjEqu}
          \dot{\lambda}(t) = -\mathcal{H}_x(X(t),u(t),\lambda(t))^\top, \quad \lambda(T)=0,
     \end{equation}
     and the {\it optimality condition}
- \begin{equation}\label{OptCond}
+    \begin{equation}\label{OptCond}
        \mathcal{H}^\ast(X(t),\lambda(t)) =
-\mathcal{H}(X(t),u(t),\lambda(t)).
+        \mathcal{H}(X(t),u(t),\lambda(t)).
    \end{equation}
-
-
-
-
-
-\begin{definition}\label{PiecewiseCont}\rm The function $w$ from $[0,T]$ to some Euclidean space is {\it piecewise continuous} if
-\begin{enumerate}[(a)]
-    \item $w$ is continuous on $[0,T]$ except at a finite number of points, and 
-    \item if $w$ is discontinuous at $t$, then  
-        \[\lim_{s\to t^-}w(s) \mbox{ and } \lim_{s\to t^+}w(s)\]
-        are finite. 
-\end{enumerate}
+%
+    \begin{definition}\label{PiecewiseCont}
+        \rm The function $w$ from $[0,T]$ to some Euclidean space is {\it piecewise continuous} if
+        \begin{enumerate}[(a)]
+            \item $w$ is continuous on $[0,T]$ except at a finite number of points, and 
+            \item if $w$ is discontinuous at $t$, then  
+                \[\lim_{s\to t^-}w(s) \mbox{ and } \lim_{s\to t^+}w(s)\]
+                are finite. 
+    \end{enumerate}
 \end{definition}
 
-
-
-\begin{theorem} Let $\lambda:[0,T]\to \R^n$  be a continuous function and let $(u^\ast,X^\ast)$ be an admissible pair such that 
-\begin{enumerate}[\rm (a)]
-    \item $u^\ast$ is piecewise continuous,
-    \item $\dot{X}^\ast$ exists and is piecewise continuous,
-    \item $(\lambda,u^\ast,X^\ast)$ satisfies the optimality condition \eqref{OptCond}, and,
-    \item except at the points of discontinuity of $u^\ast$, the adjoint equation \eqref{AdjEqu} holds.
-\end{enumerate}
+\begin{theorem} Let $\lambda:[0,T]\to \R^n$  be a continuous function 
+    and let $(u^\ast,X^\ast)$ be an admissible pair such that 
+    \begin{enumerate}[\rm (a)]
+        \item $u^\ast$ is piecewise continuous,
+        \item $\dot{X}^\ast$ exists and is piecewise continuous,
+        \item $(\lambda,u^\ast,X^\ast)$ satisfies the optimality condition \eqref{OptCond}, and,
+        \item except at the points of discontinuity of $u^\ast$, the adjoint equation \eqref{AdjEqu} holds.
+    \end{enumerate}
 If, for each $t$, the function $\mathcal{H}^\ast(\cdot,\lambda(t))$ is convex on $\mathbf{X}$, then $(u^\ast,X^\ast)$ is an optimal pair.
 \end{theorem}
 %\todo{REMARK}
